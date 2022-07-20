@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 // eslint-disable-next-line
 export default function () {
+  const navigate=useNavigate();
+  const signinhandler=()=>{
+    navigate("/login")
+  }
   
   const initialValues = { username: "", email: "", password: "",cpassword:"" };
   const [formValues, setformValues] = useState(initialValues);
@@ -134,7 +138,7 @@ export default function () {
             <p className="red">{formerrors.cpassword}</p>
 
             <div className="d-grid gap-2  my-4 ">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" onClick={signinhandler}>
                 Submit
               </button>
             </div>
