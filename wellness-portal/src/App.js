@@ -1,13 +1,13 @@
 
 import './App.css';
-import {NavBar, Header, Events, Auth} from './Components';
+import {NavBar, Header, Events} from './Components';
 
 
 
 function App() {
   return (
     <div className="App">
-         <Auth/>
+         
       <NavBar />
       <Header />
       <Events />
