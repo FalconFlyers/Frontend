@@ -1,0 +1,27 @@
+.modal{
+    width:300px;
+    display:flex;
+    justify-content: center;
+    margin-left: 550px;
+    border-radius: 3px;
+    /* box-shadow: blue  0px 0px 2px; */
+
+}
+.modal-title{
+    /* display: flex;
+    justify-content: center; */
+    margin-left: 95px;
+    color:navy;
+
+}
+.modal-footer{
+margin-right: 90px;
+
+}
+.auth{
+    margin-left: 13px;
+}
+.button{
+    width:90px;
+    padding-bottom: 2px;
+}

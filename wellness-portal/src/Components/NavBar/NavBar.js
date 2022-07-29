@@ -1,11 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
+// import { useState } from 'react-hook-use-state';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
+import PopUp from '../PopUp/PopUp';
+import Button from 'react-bootstrap/Button';
+import Auth from '../Auth/Auth';
 
-const navBar = () => {
+
+const NavBar = (props) => {
+  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+
   return (
     <Navbar bg="primary" variant="dark">
         <Container>
@@ -22,12 +32,19 @@ const navBar = () => {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Explore</Nav.Link>
-            <Nav.Link href="#pricing">Log In</Nav.Link>
+            <Nav.Link href="#pricing"  >
+               <Button style={{marginLeft:850}} onClick={handleShow}>
+                LogIn
+                </Button>
+                
+             </Nav.Link>
+            <PopUp show={show} handleClose={handleClose} setShow={setShow}/>
+            
           </Nav>
         </Container>
       </Navbar>
   )
 }
 
-export default navBar
+export default NavBar
 
