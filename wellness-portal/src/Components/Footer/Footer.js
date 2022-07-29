@@ -10,7 +10,7 @@ import './Footer.css'
 export default function Footer() {
   return (
     <div className="social-container">
-        
+        <div style={{paddingTop:'2%',color:'#00008B'}}>
         <a href="https://www.youtube.com"
         className="youtube social"
       >
@@ -31,7 +31,8 @@ export default function Footer() {
       >
         <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
-      <h3 style={{paddingTop:'2%',color:'#00008B'}}><i>"Relaxation is the stepping stone to Tranquility"</i></h3>
+      </div>
+      <h3 style={{paddingTop:'2%', paddingBottom:'2%',color:'#00008B',}}>"Relaxation is the stepping stone to Tranquility"</h3>
     </div>
   );
 }
