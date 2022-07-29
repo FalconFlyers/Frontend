@@ -12,16 +12,11 @@ function PopUp(props) {
       
 
       <Modal show={props.show} onHide={props.handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title >Login</Modal.Title>
-          
-         
+        <Modal.Header  closeButton>
+          <Modal.Title ><h3>LOGIN</h3></Modal.Title>
         </Modal.Header>
         <Modal.Body><div className="auth">
-        
         <Auth/> 
-        
-  
       </div></Modal.Body>
       
        

@@ -13,7 +13,7 @@ function App() {
       <Events />
       
    
-      {/* 720365015379-0a90vevqrpt8pgs547r2465lbqn9r694.apps.googleusercontent.com */}
+    
     
     </div>
   );

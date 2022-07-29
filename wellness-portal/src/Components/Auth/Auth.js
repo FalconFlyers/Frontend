@@ -25,8 +25,9 @@ function Auth(){
         google.accounts.id.renderButton(
             document.getElementById("signInDiv"),
             {
-                theme:"outline",
-                size:"larger"
+                theme:"dark",
+                size:"larger",
+                background:"blue"
             }
         )
         google.accounts.id.prompt();

@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
 import PopUp from '../PopUp/PopUp';
 import Button from 'react-bootstrap/Button';
-import Auth from '../Auth/Auth';
+
 
 
 const NavBar = (props) => {
@@ -34,7 +34,7 @@ const NavBar = (props) => {
             <Nav.Link href="#features">Explore</Nav.Link>
             <Nav.Link href="#pricing"  >
                <Button style={{marginLeft:850}} onClick={handleShow}>
-                LogIn
+                LOGIN
                 </Button>
                 
              </Nav.Link>
