@@ -7,7 +7,7 @@ import {NavBar, Header, Events, Auth} from './Components';
 function App() {
   return (
     <div className="App">
-         {/* <Auth/> */}
+         <Auth/>
       <NavBar />
       <Header />
       <Events />
