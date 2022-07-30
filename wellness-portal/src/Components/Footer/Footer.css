@@ -1,5 +1,5 @@
 .social-container {
-    background: #eee;
+    background:grey;
     padding: 25px 50px;
     
   }
@@ -14,17 +14,17 @@
   }
   
   a.youtube {
-    color: #eb3223;
+    color: #eee;
   }
   
   a.facebook {
-    color:#4968ad
+    color:#eee;
   }
   
   a.twitter {
-    color: #49a1eb;
+    color: #eee;
   }
   
   a.instagram {
-    color: black;
+    color: #eee;
   }
