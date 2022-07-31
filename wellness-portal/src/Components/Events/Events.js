@@ -1,22 +1,39 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import eve from "./Event-list";
+import event from "./EventList";
+import "./Events.css"
 
 const events = () => {
-  const myEve = eve.map((eve) => (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={eve.photo} />
+  const eventList = event.map((event) => (
+    event.position === "left" ?
+    (<Card>
+      <card-img>
+      <Card.Img variant="top" src={event.photo} />  
+      </card-img>
       <Card.Body>
-        <Card.Title>{eve.title}</Card.Title>
+        <Card.Title>{event.title}</Card.Title>
         <Card.Text>
-          {eve.desc}
+          {event.desc}
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
+    </Card>) : (
+      <Card>
+        <Card.Body>
+        <Card.Title>{event.title}</Card.Title>
+        <Card.Text>
+          {event.desc}
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+      <card-img>
+      <Card.Img variant="top" src={event.photo} />  
+      </card-img>
     </Card>
+    )
   ));
-  return <>{myEve}</>;
+  return <>{eventList}</>;
 };
 
 export default events;
