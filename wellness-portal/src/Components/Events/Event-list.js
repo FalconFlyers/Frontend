@@ -8,7 +8,7 @@ import pic3 from "../../images/meditation.jpg";
 const eventList = [
   { photo: pic1, title: "Pic1", desc: "Working" },
   { photo: pic2, title: "Pic1", desc: "Working" },
-  { photo: pic3, title: "Pic1", desc: "Working" },
+  { photo: pic3, title: "Pic1", desc: "Working" }
 ];
 
 export default eventList;
