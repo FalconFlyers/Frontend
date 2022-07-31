@@ -9,7 +9,7 @@ const Yoga = () => {
     
     // <Card style={{ width: "20rem",flexDirection:"row"}}>
     <>
-    <div style={{border:"1px solid black"}}>
+    <div style={{border:"1px solid black",marginBottom:"2px"}}>
       <Card>
       <Card.Img variant="top" src={yoga.photo} style={{width:"400px"}} />
       <Card.Body>

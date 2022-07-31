@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <LogoBox/>
       <YogaHead/>
-      <Yoga/>
+      <Fitness/>
       {/* <Header /> */}
       {/* <Events /> */}
     

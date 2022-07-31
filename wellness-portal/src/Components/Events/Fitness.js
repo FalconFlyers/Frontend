@@ -32,9 +32,6 @@ const Fitness = () => {
       </Card.Body>
     </Card>
     </div>
-    <div>
-      
-    </div>
     </>
   ));
   return <>{myFit}</>;
