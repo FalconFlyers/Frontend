@@ -1,6 +1,8 @@
 import React from "react";
 import './App.css';
-import {NavBar, Header, Events} from './Components';
+import {NavBar, Header, Events,LogoBox,Fitness,Yoga} from './Components';
+import FitHead from './Components/Events/FitHead';
+import YogaHead from './Components/Events/YogaHead';
 import {Footer} from './Components';
 import {
   BrowserRouter,         
