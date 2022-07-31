@@ -1,10 +1,13 @@
 
 import './App.css';
+import {NavBar, Header, Events} from './Components';
 
 function App() {
   return (
     <div className="App">
-     <h1>Hello world</h1>
+      <NavBar />
+      <Header />
+      <Events />
     </div>
   );
 }
