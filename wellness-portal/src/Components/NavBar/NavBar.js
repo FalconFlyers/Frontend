@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
 import PopUp from "../PopUp/PopUp";
 import Button from "react-bootstrap/Button";
+import {Link} from "react-router-dom";
 
 const NavBar = (props) => {
   const handleShow = () => setShow(true);
@@ -28,13 +29,14 @@ const NavBar = (props) => {
         </Navbar.Brand>
         <Navbar.Brand href="#home">WP</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Explore</Nav.Link>
-          <Nav.Link href="#pricing">
+          <Link to="/home">Home</Link>
+          <Link to="/admin">Admin</Link>
+          
+          <Link to="/login">
             <Button style={{ marginLeft: 850 }} onClick={handleShow}>
               LOGIN
             </Button>
-          </Nav.Link>
+          </Link>
           <PopUp show={show} handleClose={handleClose} setShow={setShow} />
         </Nav>
       </Container>

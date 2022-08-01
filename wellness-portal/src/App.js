@@ -1,27 +1,36 @@
 import React from "react";
-import './App.css';
-import {NavBar, Header, Events,LogoBox,Fitness,Yoga} from './Components';
-import FitHead from './Components/Events/FitHead';
-import YogaHead from './Components/Events/YogaHead';
-import {Footer} from './Components';
-import {
-  BrowserRouter,         
-  Routes,
-  Route
-} from "react-router-dom";
+import "./App.css";
+import { NavBar, Header, Events, LogoBox } from "./Components";
+import { Fitness, Yoga} from "./Containers";
+import {YogaHead,FitHead} from "./Containers";
+import { Footer } from "./Components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Addevent from "./Containers/Admin/Addevent";
 function App() {
   return (
     <div className="App">
-     
       <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/home" element={<><Header/><Events/></>}/>
-        {/* <Route exact path="#home" element={<Events/>}/> */}
-        <Route exact path="/admin" element={<Addevent/>}/>
-      </Routes>
-      <Footer/>
+        <NavBar />
+          <LogoBox/>
+          
+        <Routes>
+          <Route
+            exact
+            path="/home"
+            element={
+              <>
+                <Header />
+                <Events />
+              </>
+            }
+          />
+          <Route exact path="/fitness" element={<><FitHead/><Fitness/></>}/>
+          <Route exact path="/yoga" element={<><YogaHead/><Yoga/></>}/>
+          <Route exact path="/admin" element={<Addevent />} />
+
+        </Routes>
+        {/* <Fitness/> */}
+        <Footer />
       </BrowserRouter>
     </div>
   );

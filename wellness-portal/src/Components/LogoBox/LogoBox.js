@@ -5,22 +5,23 @@ import meditation from "../../Logos/meditation.jpeg";
 import therapy from  "../../Logos/therapy.jpg";
 import mindfulness from  "../../Logos/mindfulness.jpg";
 import "./LogoBox.css"
+import {Link} from "react-router-dom";
 
 
 // import Row from "react-bootstrap/Row"
 function LogoBox() {
   return (
       <>
-      <div className="container" style={{paddingTop:"1%",paddingBottom:"2%"}}>
+      <div className="box1" >
     <Figure   >
       <Figure.Image 
-         width={100}
+         width={105}
          height={100}
         // alt="171x180"
         src={yoga}
       />
-      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
-        YOGA
+      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"black"}}>
+       <Link className='link' to="/yoga" >YOGA</Link>
       </Figure.Caption>
       </Figure>
       <Figure >
@@ -30,20 +31,20 @@ function LogoBox() {
         // alt="171x180"
         src={meditation}
       />
-      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}} >
+      <Figure.Caption >
       
-      MEDITATION
+     <Link className='link' to="/meditation"> MEDITATION</Link>
       </Figure.Caption>
       </Figure>
       <Figure >
       <Figure.Image
-        width={140}
+        width={135}
         height={100}
         // alt="171x180"
         src={fitness}
       />
       <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
-      FITNESS
+      <Link className='link' to="/fitness"> FITNESS</Link>
       </Figure.Caption>
       </Figure>
       <Figure>
@@ -54,7 +55,7 @@ function LogoBox() {
         src={mindfulness}
       />
       <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
-      MINDFULLNESS
+      <Link className='link' to="/mindfulness">MINDFULLNESS</Link>
       </Figure.Caption>
       </Figure>
       <Figure>
@@ -65,7 +66,7 @@ function LogoBox() {
         src={therapy}
       />
       <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
-      THERAPY
+      <Link className='link' to="/therapy">THERAPY</Link>
       </Figure.Caption>
     </Figure>
     </div>
