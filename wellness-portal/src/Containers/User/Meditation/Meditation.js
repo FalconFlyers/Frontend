@@ -1,32 +1,32 @@
 import React from "react";
 
-import "./Therapy.css";
+import "./Meditation.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import ther from "./TherapyList";
+import medi from "./MeditationList";
 
-const Therapy = () => {
-  const myTher = ther.map((ther) => (
-    
+const Meditation = () => {
+  const myMedi = medi.map((medi) => (
+    // <Card style={{ width: "20rem",flexDirection:"row"}}>
     <>
       <div style={{ border: "1px solid black" }}>
         <Card>
-          <Card.Img variant="top" src={ther.photo} style={{ minWidth: "450px" }} />
+          <Card.Img variant="top" src={medi.photo} style={{ minWidth: "450px" }} />
           <Card.Body>
             <Card.Title>
-              <h4>{ther.title}</h4>
+              <h4>{medi.title}</h4>
             </Card.Title>
             <Card.Text style={{ width: "50rem", paddingTop: "1%",margin:"center" }}>
               <b>Description:</b>
-              {ther.desc} 
+              {medi.desc}
             </Card.Text>
             <Card.Text style={{ margin: "center" }}>
               <b>Bookings Available:</b>
-              {ther.Book_Avai}
+              {medi.Book_Avai}
               <br></br>
-              Date:{ther.date}
+              Date:{medi.date}
               <br></br>
-              Time:{ther.time}
+              Time:{medi.time}
             </Card.Text>
 
             <Button variant="primary" style={{ margin: "center" }}>
@@ -37,7 +37,7 @@ const Therapy = () => {
       </div>
     </>
   ));
-  return <>{myTher}</>;
+  return <>{myMedi}</>;
 };
 
-export default Therapy;
+export default Meditation;
