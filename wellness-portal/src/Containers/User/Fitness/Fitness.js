@@ -11,12 +11,12 @@ const Fitness = () => {
     <>
       <div style={{ border: "1px solid black" }}>
         <Card>
-          <Card.Img variant="top" src={fit.photo} style={{ width: "400px" }} />
+          <Card.Img variant="top" src={fit.photo} style={{ minWidth: "450px" }} />
           <Card.Body>
             <Card.Title>
               <h4>{fit.title}</h4>
             </Card.Title>
-            <Card.Text style={{ width: "50rem", paddingTop: "1%" }}>
+            <Card.Text style={{ width: "50rem", paddingTop: "1%",margin:"center" }}>
               <b>Description:</b>
               {fit.desc}
             </Card.Text>

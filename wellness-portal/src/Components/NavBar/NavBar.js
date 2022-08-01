@@ -31,6 +31,7 @@ const NavBar = (props) => {
         <Nav className="me-auto">
           <Link to="/home">Home</Link>
           <Link to="/admin">Admin</Link>
+          
           <Link to="/login">
             <Button style={{ marginLeft: 850 }} onClick={handleShow}>
               LOGIN
