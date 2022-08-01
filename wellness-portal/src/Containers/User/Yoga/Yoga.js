@@ -8,7 +8,7 @@ const Yoga = () => {
  
   const myYoga = yoga.map((yoga) => (
     
-    // <Card style={{ width: "20rem",flexDirection:"row"}}>
+  
     <>
 
   

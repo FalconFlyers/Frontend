@@ -20,7 +20,7 @@ function LogoBox() {
         // alt="171x180"
         src={yoga}
       />
-      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"black"}}>
+      <Figure.Caption >
        <Link className='link' to="/yoga" >YOGA</Link>
       </Figure.Caption>
       </Figure>
@@ -43,7 +43,7 @@ function LogoBox() {
         // alt="171x180"
         src={fitness}
       />
-      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
+      <Figure.Caption>
       <Link className='link' to="/fitness"> FITNESS</Link>
       </Figure.Caption>
       </Figure>
@@ -54,7 +54,7 @@ function LogoBox() {
         // alt="171x180"
         src={mindfulness}
       />
-      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
+      <Figure.Caption>
       <Link className='link' to="/mindfulness">MINDFULLNESS</Link>
       </Figure.Caption>
       </Figure>
@@ -65,7 +65,7 @@ function LogoBox() {
         // alt="171x180"
         src={therapy}
       />
-      <Figure.Caption style={{fontFamily:"bold",fontSize:"17px",color:"grey"}}>
+      <Figure.Caption >
       <Link className='link' to="/therapy">THERAPY</Link>
       </Figure.Caption>
     </Figure>
