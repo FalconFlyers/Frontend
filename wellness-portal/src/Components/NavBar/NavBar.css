@@ -2,8 +2,12 @@
     color: white
 }
 .nav-link:hover{
-    color: black;
+    color: rgb(109, 81, 81);
 }
 .Button{
 height:6px;
+}
+.yes{
+    color:white;
+    padding-left: 2%;
 }

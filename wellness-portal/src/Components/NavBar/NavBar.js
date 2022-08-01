@@ -29,9 +29,8 @@ const NavBar = (props) => {
         </Navbar.Brand>
         <Navbar.Brand href="#home">WP</Navbar.Brand>
         <Nav className="me-auto">
-          <Link to="/home">Home</Link>
-          <Link to="/admin">Admin</Link>
-          
+          <Link className="yes" to="/home">Home</Link>
+          <Link className="yes" to="/admin">Admin</Link>
           <Link to="/login">
             <Button style={{ marginLeft: 850 }} onClick={handleShow}>
               LOGIN

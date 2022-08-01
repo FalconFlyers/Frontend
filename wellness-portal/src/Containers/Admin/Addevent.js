@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom';
 function Addevent() {
   return (
     <>
-    <div style={{paddingTop:"2%",paddingBottom:"2%",paddingLeft:"2%",paddingRight:"2%"}}>
-    <div style={{border :'2px solid #0d6efd',flexDirection:"row"}}>
+        <div style={{marginTop:"2%",paddingBottom:"1%",fontSize:"20px",fontWeight:"bold",borderBottom:"2px solid #0d6efd"}}>
+      <Link to="/admin">Add Events</Link>
+      <Link style={{paddingLeft:"2%"}} to="/removeevent">Remove Events</Link>
+      </div>
+    <div style={{border :'2px solid #0d6efd',flexDirection:"row",marginTop:"2%",marginLeft:"2%",marginRight:"2%",marginBottom:"2%"}}>
     <Form style={{paddingTop:"2%"}} >
       <Form.Group as={Row} className="mb-3" style={{paddingTop:"2%"}} >
         <Form.Label column sm={2}>
@@ -84,7 +87,6 @@ function Addevent() {
         </Col>
       </Form.Group>
       </Form>
-    </div>
   </div>
   </>
   );

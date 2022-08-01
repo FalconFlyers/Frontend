@@ -6,13 +6,12 @@ import {YogaHead,FitHead} from "./Containers";
 import { Footer } from "./Components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Addevent from "./Containers/Admin/Addevent";
+import Removeevent from "./Containers/Admin/Removeevent";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
-          <LogoBox/>
-          
         <Routes>
           <Route
             exact
@@ -24,10 +23,10 @@ function App() {
               </>
             }
           />
-          <Route exact path="/fitness" element={<><FitHead/><Fitness/></>}/>
-          <Route exact path="/yoga" element={<><YogaHead/><Yoga/></>}/>
+          <Route exact path="/fitness" element={<> <LogoBox/><FitHead/><Fitness/></>}/>
+          <Route exact path="/yoga" element={<> <LogoBox/><YogaHead/><Yoga/></>}/>
           <Route exact path="/admin" element={<Addevent />} />
-
+          <Route exact path="/removeevent" element={<Removeevent/>} />
         </Routes>
         {/* <Fitness/> */}
         <Footer />
