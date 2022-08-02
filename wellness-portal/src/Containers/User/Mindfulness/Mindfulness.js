@@ -10,11 +10,13 @@ const Mindfulness = () => {
     <>
    
         <Card className="mind">
+          <card-img>
           <Card.Img
             variant="top"
             src={mind.photo}
             
           />
+          </card-img>
           <Card.Body>
             <Card.Title>
               <h4>{mind.title}</h4>
@@ -56,7 +58,7 @@ const Mindfulness = () => {
         </div>
         <h3>Book Your Mindfulness Event</h3>
       </div>
-      
+
       {myMind}
     </>
   );

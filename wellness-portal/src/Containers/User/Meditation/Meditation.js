@@ -3,25 +3,22 @@ import "./Meditation.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import medi from "./MeditationList";
-import { LogoBox } from "../../../Components";
 
 const Meditation = () => {
   const myMedi = medi.map((medi) => (
-    // <Card style={{ width: "20rem",flexDirection:"row"}}>
     <>
       <Card className="medi">
+      <card-img>
         <Card.Img
           variant="top"
           src={medi.photo}
-         
         />
+        </card-img>
         <Card.Body>
           <Card.Title>
             <h4>{medi.title}</h4>
           </Card.Title>
-          <Card.Text
-            
-          >
+          <Card.Text>
             <b>Description:</b>
             {medi.desc}
           </Card.Text>
@@ -33,7 +30,6 @@ const Meditation = () => {
             <br></br>
             Time:{medi.time}
           </Card.Text>
-
           <Button variant="primary" >
             Book Now
           </Button>
@@ -55,7 +51,6 @@ const Meditation = () => {
         </div>
         <h3>Book Your Meditation Event</h3>
       </div>
-      <LogoBox/>
       {myMedi}
     </>
   );

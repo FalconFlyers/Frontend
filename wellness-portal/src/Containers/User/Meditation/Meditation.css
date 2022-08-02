@@ -7,10 +7,10 @@
 .medi card-img{
     width: 50%;
 }
-.medi.card-img{
+.medi .card-img{
     max-width: 450px;
 }
-.medi.card-body {
+.medi .card-body {
     display: flex;
     flex-direction: column;
     align-items: center;

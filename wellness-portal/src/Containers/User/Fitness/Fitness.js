@@ -2,7 +2,6 @@ import React from "react";
 import "./Fitness.css";
 import Card from "react-bootstrap/Card";
 import fit from "./FitnessList";
-import { LogoBox } from "../../../Components";
 
 const Fitness = () => {
   const myFit = fit.map((fit) => (
@@ -27,7 +26,6 @@ const Fitness = () => {
             <br></br>
             Time: {fit.time}
           </Card.Text>
-
           <button variant="primary">Book Now</button>
         </Card.Body>
       </Card>
@@ -39,14 +37,13 @@ const Fitness = () => {
         <div>
           <h5>
             <i>
-              "Exercise not only changes your body, it changes your mind
-              ,your attitude and your mood. "
+              "Exercise not only changes your body, it changes your mind ,your
+              attitude and your mood. "
             </i>
           </h5>
         </div>
         <h3>Book Your Fitness Event</h3>
       </div>
-      <LogoBox/>
       {myFit}
     </>
   );
