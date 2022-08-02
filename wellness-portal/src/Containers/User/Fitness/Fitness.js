@@ -9,7 +9,7 @@ const Fitness = () => {
   const myFit = fit.map((fit) => (
     // <Card style={{ width: "20rem",flexDirection:"row"}}>
     <>
-      <div style={{ border: "1px solid black" }}>
+      <div className="fitness" style={{ border: "1px solid black" }}>
         <Card>
           <Card.Img variant="top" src={fit.photo} style={{ minWidth: "450px" }} />
           <Card.Body>

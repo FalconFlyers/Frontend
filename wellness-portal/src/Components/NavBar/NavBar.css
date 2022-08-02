@@ -1,9 +1,59 @@
-.nav-link{
-    color: white
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
-.nav-link:hover{
+.nav{
+    position: sticky;
+    top: 0;}
+ul.topnav button{
+    background-color: #1C3879;
+    color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+ul.topnav button:hover{
+    background-color: #b8bbc4;
+    color: white;
+}
+
+ul.topnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul.topnav li a {
+    font-weight: 600;
+    display: block;
     color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
-.Button{
-height:6px;
+
+ul.topnav li a:hover {
+    background-color: #1C3879;
+    color: white;
+    font-weight: 600;
+}
+
+.topnav a:active {
+    background-color: #1C3879;
+    color: white;
+    font-weight: 600;
+}
+
+ul.topnav li.right {
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+
+    ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
 }

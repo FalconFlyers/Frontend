@@ -1,10 +1,10 @@
 
-.card{
+.fitness .card{
     width: 20rem;
     flex-direction: row;
   
 }
-.card-title{
+.fitness .card-title{
     width:30rem;
     padding-left: 0%;
     color:#0d6efd;

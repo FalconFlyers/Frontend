@@ -2,7 +2,7 @@ import pic1 from "../../images/yoga.jpg";
 import pic2 from "../../images/mind.jpg";
 import pic3 from "../../images/meditation.jpg";
 import pic4 from "../../images/therapy.jpg";
-import pic5 from "../../images/fitness1.jpg";
+import pic5 from "../../images/fitness.jpg";
 
 const eventList = [
   { photo: pic1, title: "YOGA", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim porro vitae ipsam cupiditate modi unde, omnis repellendus eius nobis! Eum optio inventore pariatur voluptatibus velit vero facilis laudantium exercitationem minus?", position:"left" },

@@ -9,7 +9,7 @@ import "./Carousel.css";
 
 const Header = () => {
   return (
-    <Carousel>
+    <Carousel className="header">
       <Carousel.Item>
           <img src={pic4} alt="First slide" />
         <Carousel.Caption>

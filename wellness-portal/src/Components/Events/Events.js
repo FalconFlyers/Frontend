@@ -7,7 +7,7 @@ import "./Events.css"
 const events = () => {
   const eventList = event.map((event) => (
     event.position === "left" ?
-    (<Card>
+    (<Card className="cards">
       <card-img>
       <Card.Img variant="top" src={event.photo} />  
       </card-img>
@@ -19,7 +19,7 @@ const events = () => {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>) : (
-      <Card>
+      <Card className="cards">
         <Card.Body>
         <Card.Title>{event.title}</Card.Title>
         <Card.Text>

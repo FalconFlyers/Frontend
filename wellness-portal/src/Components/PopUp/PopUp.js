@@ -5,6 +5,7 @@ import Auth from "../Auth/Auth";
 import "./PopUp.css";
 
 function PopUp(props) {
+  console.log(typeof(props.changedLogging));
   return (
     <>
       <Modal show={props.show} onHide={props.handleClose}>
