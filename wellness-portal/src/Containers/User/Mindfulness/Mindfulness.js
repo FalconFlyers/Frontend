@@ -7,20 +7,25 @@ import mind from "./MindfulnessList";
 
 const Mindfulness = () => {
   const myMind = mind.map((mind) => (
-    // <Card style={{ width: "20rem",flexDirection:"row"}}>
     <>
-      <div style={{ border: "1px solid black" }}>
-        <Card>
-          <Card.Img variant="top" src={mind.photo} style={{ minWidth: "450px" }} />
+   
+        <Card className="mind">
+          <Card.Img
+            variant="top"
+            src={mind.photo}
+            
+          />
           <Card.Body>
             <Card.Title>
               <h4>{mind.title}</h4>
             </Card.Title>
-            <Card.Text style={{ width: "50rem", paddingTop: "1%",margin:"center" }}>
+            <Card.Text
+            
+            >
               <b>Description:</b>
               {mind.desc}
             </Card.Text>
-            <Card.Text style={{ margin: "center" }}>
+            <Card.Text >
               <b>Bookings Available:</b>
               {mind.Book_Avai}
               <br></br>
@@ -29,15 +34,31 @@ const Mindfulness = () => {
               Time:{mind.time}
             </Card.Text>
 
-            <Button variant="primary" style={{ margin: "center" }}>
+            <Button variant="primary" >
               Book Now
             </Button>
           </Card.Body>
         </Card>
-      </div>
+    
     </>
   ));
-  return <>{myMind}</>;
+  return (
+    <>
+      <div className="text">
+        <div>
+          <h5>
+            <i>
+              "The mind is definitely something that can be transformed,
+              <br></br>
+              And meditation is a means to transform it"
+            </i>
+          </h5>
+        </div>
+        <h3>Book Your Mindfulness Event</h3>
+      </div>
+      {myMind}
+    </>
+  );
 };
 
 export default Mindfulness;

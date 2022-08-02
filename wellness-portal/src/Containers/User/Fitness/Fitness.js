@@ -36,12 +36,12 @@ const Fitness = () => {
     <>
       <div className="text">
         <div>
-          <p>
+          <h5>
             <i>
               "Exercise not only changes your body, it changes your mind
               ,your attitude and your mood. "
             </i>
-          </p>
+          </h5>
         </div>
         <h3>Book Your Fitness Event</h3>
       </div>

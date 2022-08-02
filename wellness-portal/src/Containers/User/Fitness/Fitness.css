@@ -8,7 +8,7 @@
     width: 50%;
 }
 .fitness .card-img{
-    max-width: 100%;
+    max-width: 450px;
 }
 .fitness .card-body {
     display: flex;
