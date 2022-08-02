@@ -56,6 +56,7 @@ const Mindfulness = () => {
         </div>
         <h3>Book Your Mindfulness Event</h3>
       </div>
+      
       {myMind}
     </>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header, Events, LogoBox} from "../../../Components";
+import {Header, Events, LogoBox, MyEvents} from "../../../Components";
 
 const home = (props) => {
   return (
@@ -7,7 +7,7 @@ const home = (props) => {
       { 
         (!props.isLogged)
           ? <> <Header/><Events/> </> 
-          : <> <Header/><LogoBox/> </> 
+          : <> <Header/><LogoBox/><MyEvents/></> 
       }
     </>
   );

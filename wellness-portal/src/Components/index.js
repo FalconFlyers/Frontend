@@ -5,3 +5,4 @@ export {default as PopUp} from './PopUp/PopUp';
 export {default as Auth} from './Auth/Auth';
 export { default as LogoBox} from './LogoBox/LogoBox';
 export {default as Header} from './Carousel/Carousel';
+export {default as MyEvents} from './MyEvents/MyEvents';

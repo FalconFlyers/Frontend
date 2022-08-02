@@ -1,9 +1,9 @@
 import React from "react";
-
 import "./Meditation.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import medi from "./MeditationList";
+import { LogoBox } from "../../../Components";
 
 const Meditation = () => {
   const myMedi = medi.map((medi) => (
@@ -55,6 +55,7 @@ const Meditation = () => {
         </div>
         <h3>Book Your Meditation Event</h3>
       </div>
+      <LogoBox/>
       {myMedi}
     </>
   );
