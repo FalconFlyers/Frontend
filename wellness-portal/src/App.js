@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { NavBar, Header, Events, LogoBox } from "./Components";
 import { Fitness, Yoga,Therapy,Meditation,Mindfulness,Home} from "./Containers";
-import {YogaHead,FitHead,TherapyHead,MeditationHead,MindfulnessHead} from "./Containers";
+import {YogaHead,TherapyHead,MeditationHead,MindfulnessHead} from "./Containers";
 import { Footer } from "./Components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Addevent from "./Containers/Admin/Addevent";
@@ -30,7 +30,6 @@ function App() {
             path="/fitness"
             element={
               <>
-                <FitHead />
                 <Fitness />
               </>
             }
@@ -55,7 +54,7 @@ function App() {
               </>
             }
           />
-          <Route exact path="/fitness" element={<><FitHead/><Fitness/></>}/>
+          <Route exact path="/fitness" element={<><Fitness/></>}/>
           <Route exact path="/yoga" element={<><YogaHead/><Yoga/></>}/>
           <Route exact path="/therapy" element={<><TherapyHead/><Therapy/></>}/>
           <Route exact path="/meditation" element={<><MeditationHead/><Meditation/></>}/>

@@ -1,43 +1,53 @@
 import React from "react";
-
 import "./Fitness.css";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import fit from "./FitnessList";
 
 const Fitness = () => {
   const myFit = fit.map((fit) => (
-    // <Card style={{ width: "20rem",flexDirection:"row"}}>
     <>
-      <div className="fitness" style={{ border: "1px solid black" }}>
-        <Card>
-          <Card.Img variant="top" src={fit.photo} style={{ minWidth: "450px" }} />
-          <Card.Body>
-            <Card.Title>
-              <h4>{fit.title}</h4>
-            </Card.Title>
-            <Card.Text style={{ width: "50rem", paddingTop: "1%",margin:"center" }}>
-              <b>Description:</b>
-              {fit.desc}
-            </Card.Text>
-            <Card.Text style={{ margin: "center" }}>
-              <b>Bookings Available:</b>
-              {fit.Book_Avai}
-              <br></br>
-              Date:{fit.date}
-              <br></br>
-              Time:{fit.time}
-            </Card.Text>
+      <Card className="fitness">
+        <card-img>
+          <Card.Img variant="top" src={fit.photo} />
+        </card-img>
+        <Card.Body>
+          <Card.Title>
+            <h4>{fit.title}</h4>
+          </Card.Title>
+          <Card.Text>
+            <b>Description: </b>
+            {fit.desc}
+          </Card.Text>
+          <Card.Text>
+            <b>Bookings Available: </b>
+            {fit.Book_Avai}
+            <br></br>
+            Date: {fit.date}
+            <br></br>
+            Time: {fit.time}
+          </Card.Text>
 
-            <Button variant="primary" style={{ margin: "center" }}>
-              Book Now
-            </Button>
-          </Card.Body>
-        </Card>
-      </div>
+          <button variant="primary">Book Now</button>
+        </Card.Body>
+      </Card>
     </>
   ));
-  return <>{myFit}</>;
+  return (
+    <>
+      <div className="text">
+        <div>
+          <p>
+            <i>
+              "Exercise not only changes your body, it changes your mind
+              ,your attitude and your mood. "
+            </i>
+          </p>
+        </div>
+        <h3>Book Your Fitness Event</h3>
+      </div>
+      {myFit}
+    </>
+  );
 };
 
 export default Fitness;
