@@ -23,7 +23,6 @@ const Fitness = () => {
             <br></br>
             Time: {fit.time}
           </Card.Text>
-
           <button variant="primary">Cancel</button>
         </Card.Body>
       </Card>

@@ -15,12 +15,9 @@ const NavBar = (props) => {
   const changedLogging = props.changedLogging;
   return !props.isLogged ? (
     <Nav>
-      <img
-        src={process.env.PUBLIC_URL + "images/Balance_within_you logo.png"}
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-      />
+      <logo>
+        <img src={process.env.PUBLIC_URL + "images/BWY.png"} />
+      </logo>
       <ul class="topnav">
         <li>
           <Link to="/home">Home</Link>
@@ -38,12 +35,9 @@ const NavBar = (props) => {
     </Nav>
   ) : (
     <Nav>
-      <img
-        src={process.env.PUBLIC_URL + "images/Balance_within_you logo.png"}
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-      />
+      <logo>
+        <img src={process.env.PUBLIC_URL + "images/BWY.png"} />
+      </logo>
       <ul class="topnav">
         <li>
           <Link to="/home">Home</Link>

@@ -10,6 +10,13 @@ ul.topnav {
     background-color: #1C3879;
     z-index: 1;
 }
+.nav logo{
+ width: 4%;
+ margin: 0.5%;
+}
+.nav img{
+    max-width: 100%;
+}
 ul.topnav button{
     background-color: white;
     color: #1C3879;

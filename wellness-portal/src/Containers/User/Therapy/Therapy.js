@@ -38,10 +38,9 @@ const Therapy = () => {
         <div>
           <h5>
             <i>
-              "Mental strength is not the ability to stay out of the dark,
-              <br></br>
-              It's the ability to sit present in the darkness knowing that the
-              light will shine again"
+              "Mental strength is not the ability to stay out of the dark, It's
+              the ability to sit present in the darkness knowing that the light
+              will shine again"
             </i>
           </h5>
         </div>

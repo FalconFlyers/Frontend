@@ -8,40 +8,30 @@ import mind from "./MindfulnessList";
 const Mindfulness = () => {
   const myMind = mind.map((mind) => (
     <>
-   
-        <Card className="mind">
-          <card-img>
-          <Card.Img
-            variant="top"
-            src={mind.photo}
-            
-          />
-          </card-img>
-          <Card.Body>
-            <Card.Title>
-              <h4>{mind.title}</h4>
-            </Card.Title>
-            <Card.Text
-            
-            >
-              <b>Description:</b>
-              {mind.desc}
-            </Card.Text>
-            <Card.Text >
-              <b>Bookings Available:</b>
-              {mind.Book_Avai}
-              <br></br>
-              Date:{mind.date}
-              <br></br>
-              Time:{mind.time}
-            </Card.Text>
+      <Card className="mind">
+        <card-img>
+          <Card.Img variant="top" src={mind.photo} />
+        </card-img>
+        <Card.Body>
+          <Card.Title>
+            <h4>{mind.title}</h4>
+          </Card.Title>
+          <Card.Text>
+            <b>Description:</b>
+            {mind.desc}
+          </Card.Text>
+          <Card.Text>
+            <b>Bookings Available:</b>
+            {mind.Book_Avai}
+            <br></br>
+            Date:{mind.date}
+            <br></br>
+            Time:{mind.time}
+          </Card.Text>
 
-            <Button variant="primary" >
-              Book Now
-            </Button>
-          </Card.Body>
-        </Card>
-    
+          <Button variant="primary">Book Now</Button>
+        </Card.Body>
+      </Card>
     </>
   ));
   return (
@@ -50,9 +40,8 @@ const Mindfulness = () => {
         <div>
           <h5>
             <i>
-              "The mind is definitely something that can be transformed,
-              <br></br>
-              And meditation is a means to transform it"
+              "The mind is definitely something that can be transformed, And
+              meditation is a means to transform it"
             </i>
           </h5>
         </div>

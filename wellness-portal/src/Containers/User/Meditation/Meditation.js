@@ -8,11 +8,8 @@ const Meditation = () => {
   const myMedi = medi.map((medi) => (
     <>
       <Card className="medi">
-      <card-img>
-        <Card.Img
-          variant="top"
-          src={medi.photo}
-        />
+        <card-img>
+          <Card.Img variant="top" src={medi.photo} />
         </card-img>
         <Card.Body>
           <Card.Title>
@@ -22,7 +19,7 @@ const Meditation = () => {
             <b>Description:</b>
             {medi.desc}
           </Card.Text>
-          <Card.Text >
+          <Card.Text>
             <b>Bookings Available:</b>
             {medi.Book_Avai}
             <br></br>
@@ -30,9 +27,7 @@ const Meditation = () => {
             <br></br>
             Time:{medi.time}
           </Card.Text>
-          <Button variant="primary" >
-            Book Now
-          </Button>
+          <Button variant="primary">Book Now</Button>
         </Card.Body>
       </Card>
     </>
@@ -43,9 +38,8 @@ const Meditation = () => {
         <div>
           <h5>
             <i>
-              "The mind is definitely something that can be transformed,
-              <br></br>
-              And meditation is a means to transform it"
+              "The mind is definitely something that can be transformed, And
+              meditation is a means to transform it"
             </i>
           </h5>
         </div>

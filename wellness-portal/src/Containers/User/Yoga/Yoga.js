@@ -38,7 +38,7 @@ const Yoga = () => {
         <div>
           <h5>
             <i>
-            "Yoga happens beyond the mat,<br></br> Anything you do with attention to how you feel is doing Yoga"
+            "Yoga happens beyond the mat, Anything you do with attention to how you feel is doing Yoga"
             </i>
           </h5>
         </div>
