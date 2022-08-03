@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button';
+import "./Addevent.css";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -6,13 +7,13 @@ import { Link } from 'react-router-dom';
 function Addevent() {
   return (
     <>
-        <div style={{marginTop:"2%",paddingBottom:"1%",fontSize:"20px",fontWeight:"bold",borderBottom:"2px solid #0d6efd"}}>
-      <Link to="/admin">Add Events</Link>
-      <Link style={{paddingLeft:"2%"}} to="/removeevent">Remove Events</Link>
+        <div className="header" >
+      <Link className='l1' to="/admin">Add Events</Link>
+      <Link className='l1' style={{paddingLeft:"2%"}} to="/removeevent">Remove Events</Link>
       </div>
-    <div style={{border :'2px solid #0d6efd',flexDirection:"row",marginTop:"2%",marginLeft:"2%",marginRight:"2%",marginBottom:"2%"}}>
+    <div className='container' >
     <Form style={{paddingTop:"2%"}} >
-      <Form.Group as={Row} className="mb-3" style={{paddingTop:"2%"}} >
+      <Form.Group as={Row}  className="form-group" >
         <Form.Label column sm={2}>
           Event Name:
         </Form.Label>
@@ -27,7 +28,7 @@ function Addevent() {
         <Form.Control type="date"/>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" style={{paddingTop:"2%"}}>
+      <Form.Group as={Row} className="form-group">
         <Form.Label column sm={2}>
           Event Type:
         </Form.Label>
@@ -41,12 +42,12 @@ function Addevent() {
           </Form.Select>
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" style={{paddingTop:"2%"}}>
+      <Form.Group as={Row} className="form-group">
       <Form.Label column sm={2}>
           Capacity:
         </Form.Label>
         <Col sm={2}>
-          <Form.Control type="Number" placeholder="Capacity"/>
+          <Form.Control type="Number" min="0" placeholder="Capacity"/>
         </Col>
         <Col sm={2}></Col>
         <Form.Label column sm={2}>
@@ -56,7 +57,7 @@ function Addevent() {
           <Form.Control type="time" placeholder="Time" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" style={{paddingTop:"2%"}} >
+      <Form.Group as={Row} className="form-group">
         <Form.Label column sm={2}>
           Instructor:
         </Form.Label>
@@ -66,7 +67,7 @@ function Addevent() {
         <Col sm={2}></Col>
         
       </Form.Group>
-      <Form.Group as={Row} className="mb-3" style={{paddingTop:"2%"}}>
+      <Form.Group as={Row} className="form-group">
         <Form.Label column sm={2}>
           Zoom Link:
         </Form.Label>
@@ -81,9 +82,9 @@ function Addevent() {
           <Form.Control type="text" placeholder="Event Description" style={{paddingBottom:"10%"}} />
         </Col>
       </Form.Group> 
-    <Form.Group as={Row} className="mb-4 " style={{paddingRight:"15%",paddingTop:"2%"}} >
+    <Form.Group as={Row} className="btn-deco" >
         <Col sm={{ span: 10, offset: 2 }}>
-          <Button type="submit">ADD EVENT</Button>
+          <button className="btn">ADD EVENT</button>
         </Col>
       </Form.Group>
       </Form>
