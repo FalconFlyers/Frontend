@@ -7,10 +7,10 @@
 .therapy card-img{
     width: 50%;
 }
-.therapy.card-img{
+.therapy .card-img{
     max-width: 450px;
 }
-.therapy.card-body {
+.therapy .card-body {
     display: flex;
     flex-direction: column;
     align-items: center;
