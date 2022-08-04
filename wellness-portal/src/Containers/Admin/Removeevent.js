@@ -4,13 +4,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Button from 'react-bootstrap/Button';
+import './Addevent.css'
 const Removeevent = () => {
   return (
     <><div className="header" >
     <Link className='l1' to="/admin">Add Events</Link>
-    <Link className='l1' style={{paddingLeft:"2%"}} to="/removeevent">Remove Events</Link>
+    <Link className='l1'  to="/removeevent">Remove Events</Link>
     </div>
-    <Container style={{marginTop:"2%",marginBottom:"2%",paddingTop:"1%",paddingBottom:"1%"}}>
+    <Container className="cont">
     <Row>
       <Col>Event Name-Type Instructor</Col>
       <Col>Event description</Col>
@@ -18,7 +19,7 @@ const Removeevent = () => {
       <Col> <Button type="submit">REMOVE EVENT</Button></Col>
     </Row>
     </Container>
-    <Container style={{marginTop:"2%",marginBottom:"2%",paddingTop:"1%",paddingBottom:"1%"}}>
+    <Container className="cont" >
     <Row>
       <Col>Event Name-Type Instructor</Col>
       <Col>Event description</Col>
@@ -26,7 +27,7 @@ const Removeevent = () => {
       <Col><Button type="submit">REMOVE EVENT</Button></Col>
     </Row>
     </Container>
-    <Container style={{marginTop:"2%",marginBottom:"2%",paddingTop:"1%",paddingBottom:"1%"}}>
+    <Container className="cont">
     <Row>
       <Col>Event Name-Type Instructor</Col>
       <Col>Event description</Col>
@@ -34,7 +35,7 @@ const Removeevent = () => {
       <Col><Button type="submit">REMOVE EVENT</Button></Col>
     </Row>
     </Container>
-    <Container style={{marginTop:"2%",marginBottom:"2%",paddingTop:"1%",paddingBottom:"1%"}}>
+    <Container className="cont">
     <Row>
       <Col>Event Name-Type Instructor</Col>
       <Col>Event description</Col>

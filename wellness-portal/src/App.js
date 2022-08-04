@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { NavBar, Header, Events, LogoBox } from "./Components";
+import { NavBar, Header, Events, LogoBox, LogIn, LogOut } from "./Components";
 import {
   Fitness,
   Yoga,
@@ -38,7 +38,7 @@ function App() {
             path="/fitness"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Fitness />
               </>
             }
@@ -48,7 +48,7 @@ function App() {
             path="/yoga"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Yoga />
               </>
             }
@@ -58,7 +58,7 @@ function App() {
             path="/therapy"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Therapy />
               </>
             }
@@ -69,7 +69,7 @@ function App() {
             path="/meditation"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Meditation />
               </>
             }
@@ -79,15 +79,14 @@ function App() {
             path="/mindfulness"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Mindfulness />
               </>
             }
           />
           <Route exact path="/admin" element={<Addevent />} />
-          <Route exact path="/removeevent" element={<Removeevent/>} />
+          <Route exact path="/removeevent" element={<Removeevent />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>

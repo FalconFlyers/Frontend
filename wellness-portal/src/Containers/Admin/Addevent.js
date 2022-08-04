@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import "./Addevent.css";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -51,10 +50,10 @@ function Addevent() {
     <>
         <div className="header" >
       <Link className='l1' to="/admin">Add Events</Link>
-      <Link className='l1' style={{paddingLeft:"2%"}} to="/removeevent">Remove Events</Link>
+      <Link className='l1' to="/removeevent">Remove Events</Link>
       </div>
     <div className='container' >
-    <Form style={{paddingTop:"2%"}} >
+    <Form>
       <Form.Group as={Row}  className="form-group" >
         <Form.Label column sm={2}>
           Event Name:

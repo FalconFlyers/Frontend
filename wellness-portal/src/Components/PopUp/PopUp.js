@@ -1,11 +1,9 @@
 import React from "react";
-// import Button from 'react-bootstrap/Button';
 import Modal from "react-bootstrap/Modal";
-import Auth from "../Auth/Auth";
+import LogIn from "../Log/LogIn";
 import "./PopUp.css";
 
 function PopUp(props) {
-  console.log(typeof(props.changedLogging));
   return (
     <>
       <Modal show={props.show} onHide={props.handleClose}>
@@ -16,7 +14,7 @@ function PopUp(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="auth">
-            <Auth />
+            <LogIn handleClose={props.handleClose} changedLogging={props.changedLogging}/>
           </div>
         </Modal.Body>
       </Modal>
