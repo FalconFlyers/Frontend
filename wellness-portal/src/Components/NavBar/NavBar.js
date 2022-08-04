@@ -26,6 +26,9 @@ const NavBar = (props) => {
           <Link to="/home">Home</Link>
         </li>
         <li>
+          <Link to="/explore">Explore</Link>
+        </li>
+        <li>
           <button onClick={handleShow} >Login</button>
           <PopUp
             show={show}
@@ -43,6 +46,9 @@ const NavBar = (props) => {
       <ul class="topnav">
         <li>
           <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/explore">Explore</Link>
         </li>
         <li>
           <Link to="/admin">Admin</Link>
