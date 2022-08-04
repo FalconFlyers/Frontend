@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import "./Addevent.css";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -41,10 +40,10 @@ function Addevent() {
     <>
         <div className="header" >
       <Link className='l1' to="/admin">Add Events</Link>
-      <Link className='l1' style={{paddingLeft:"2%"}} to="/removeevent">Remove Events</Link>
+      <Link className='l1' to="/removeevent">Remove Events</Link>
       </div>
     <div className='container' >
-    <Form style={{paddingTop:"2%"}} >
+    <Form>
       <Form.Group as={Row}  className="form-group" >
         <Form.Label column sm={2}>
           Event Name:
@@ -104,14 +103,14 @@ function Addevent() {
           Zoom Link:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" placeholder="Zoom Link" style={{paddingBottom:"10%"}}/>
+          <Form.Control type="text" placeholder="Zoom Link" className="form-control"/>
         </Col>
         <Col sm={1}></Col>
         <Form.Label column sm={2} >
           Event Discription:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" placeholder="Event Description" style={{paddingBottom:"10%"}} />
+          <Form.Control type="text" placeholder="Event Description" className="form-control" />
         </Col>
       </Form.Group> 
     <Form.Group as={Row} className="btn-deco" >
