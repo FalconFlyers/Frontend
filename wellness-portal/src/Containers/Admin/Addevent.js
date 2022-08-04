@@ -10,7 +10,12 @@ const addEventUrl = `http://localhost:8080/api/v1/events`;
 
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setEve] = useState("");//chg to setName
+  const [name, setName] = useState("");//chg to setName
+  const [type, setType] = useState("");
+  const [zLink, setZLink] = useState("");
+  const [capacity, setCapacity] = useState();
+  const [instructor, setInstructor] = useState("");
+  const [desc, setDesc] = useState("");
   //create consts for all fields
   //const 
   useEffect(() => {
@@ -22,7 +27,12 @@ function Addevent() {
   function createEvent() {
     axios
       .post(addEventUrl, {
-        name
+        name,
+        type,
+        zLink,
+        capacity,
+        instructor,
+        desc
         //,capacity,type
         //all data to be sent
       })
@@ -50,7 +60,7 @@ function Addevent() {
           Event Name:
         </Form.Label>
         <Col sm={2}>
-          <Form.Control type="text" placeholder="Event Name" onChange={(e)=>{setEve(e.target.value)}} value = {name}/>
+          <Form.Control type="text" placeholder="Event Name" onChange={(e)=>{setName(e.target.value)}} value = {name}/>
         </Col>
         <Col sm={2}></Col>
         <Form.Label column sm={2}>
@@ -79,7 +89,7 @@ function Addevent() {
           Capacity:
         </Form.Label>
         <Col sm={2}>
-          <Form.Control type="Number" min="0" placeholder="Capacity"/>
+          <Form.Control type="Number" min="0" placeholder="Capacity" onChange={(e)=>{setCapacity(e.target.value)}} value = {capacity}/>
         </Col>
         <Col sm={2}></Col>
         <Form.Label column sm={2}>
@@ -94,7 +104,7 @@ function Addevent() {
           Instructor:
         </Form.Label>
         <Col sm={2}>
-          <Form.Control type="text" placeholder="Instructor Name" />
+          <Form.Control type="text" placeholder="Instructor Name" onChange={(e)=>{setInstructor(e.target.value)}} value = {instructor}/>
         </Col>
         <Col sm={2}></Col>
         
@@ -104,14 +114,14 @@ function Addevent() {
           Zoom Link:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" placeholder="Zoom Link" style={{paddingBottom:"10%"}}/>
+          <Form.Control type="text" placeholder="Zoom Link" onChange={(e)=>{setZLink(e.target.value)}} value = {zLink} style={{paddingBottom:"10%"}}/>
         </Col>
         <Col sm={1}></Col>
         <Form.Label column sm={2} >
           Event Discription:
         </Form.Label>
         <Col sm={3}>
-          <Form.Control type="text" placeholder="Event Description" style={{paddingBottom:"10%"}} />
+          <Form.Control type="text" placeholder="Event Description" onChange={(e)=>{setDesc(e.target.value)}} value = {desc} style={{paddingBottom:"10%"}} />
         </Col>
       </Form.Group> 
     <Form.Group as={Row} className="btn-deco" >
