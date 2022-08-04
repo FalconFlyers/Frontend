@@ -21,7 +21,10 @@ ul.topnav button{
     background-color: white;
     color: #1C3879;
     border: 1px solid black;
+    font-weight: 500;
     border-radius: 7px;
+    width: 75px;
+    padding: 7%;
 }
 ul.topnav button:hover{
     background-color: #b8bbc4;
@@ -31,8 +34,10 @@ ul.topnav button:hover{
 ul.topnav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    padding: 0 3% 0 1%;
+    justify-content: space-between;
     align-items: center;
+    width: 91vw;
 }
 
 ul.topnav li a {
