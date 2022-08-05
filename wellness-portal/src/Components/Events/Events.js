@@ -16,7 +16,7 @@ const events = () => {
         <Card.Text>
           {event.desc}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Book Event</Button>
       </Card.Body>
     </Card>) : (
       <Card className="cards">
@@ -25,7 +25,7 @@ const events = () => {
         <Card.Text>
           {event.desc}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Book Event</Button>
       </Card.Body>
       <card-img>
       <Card.Img variant="top" src={event.photo} />  

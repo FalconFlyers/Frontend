@@ -14,6 +14,7 @@ import { Footer } from "./Components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Addevent from "./Containers/Admin/Addevent";
 import Removeevent from "./Containers/Admin/Removeevent";
+import Explore from "./Containers/User/Explore/Explore";
 function App() {
   const [isLogged, setIsLogged] = useState(false);
   const changedLogging = () => {
@@ -31,6 +32,13 @@ function App() {
               <>
                 <Home changedLogging={changedLogging} isLogged={isLogged} />
               </>
+            }
+          />
+          <Route
+            exact
+            path="/explore"
+            element={
+                <Explore/>
             }
           />
           <Route
