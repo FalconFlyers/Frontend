@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { GoogleLogin } from "react-google-login";
-// refresh token
 import { refreshTokenSetup } from "../../utils/refreshToken";
 import { gapi } from "gapi-script";
 import "./LogIn.css";
@@ -9,6 +8,8 @@ const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
 
 function Login(props) {
+  const adminEmail = "falconflyers01@gmail.com";
+  
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -21,19 +22,19 @@ function Login(props) {
   }, []);
   const onSuccess = (res) => {
     console.log("Login Success: currentUser:", res.profileObj);
-    // alert(
-    //   `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    // );
+    console.log("Login Success: currentUser:", res.profileObj.email);
+    if(adminEmail === res.profileObj.email){
+      props.setFlagAdmin(true);
+    }
     refreshTokenSetup(res);
     props.handleClose();
     props.changedLogging();
+    alert("You're successfully logged in");
   };
 
   const onFailure = (res) => {
     console.log("Login failed: res:", res);
-    // alert(
-    //   `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
-    // );
+    
   };
 
   return (
@@ -48,7 +49,6 @@ function Login(props) {
         render={(renderProps) => (
           <button onClick={renderProps.onClick} disabled={renderProps.disabled}>
             <img src={GoogleLogo} className="icon"></img>
-
             <span className="buttonText">LogIn with Google</span>
           </button>
         )}

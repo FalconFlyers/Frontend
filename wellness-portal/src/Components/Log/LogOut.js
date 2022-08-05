@@ -8,8 +8,8 @@ const clientId =
 function Logout(props) {
   const onSuccess = () => {
     console.log("Logout made successfully");
-    // alert("Logout made successfully ✌");
     props.changedLogging();
+    alert("You're successfully logged out");
   };
 
   return (

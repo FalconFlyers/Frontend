@@ -14,7 +14,7 @@ function PopUp(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="auth">
-            <LogIn handleClose={props.handleClose} changedLogging={props.changedLogging}/>
+            <LogIn handleClose={props.handleClose} changedLogging={props.changedLogging} setFlagAdmin={props.setFlagAdmin}/>
           </div>
         </Modal.Body>
       </Modal>
