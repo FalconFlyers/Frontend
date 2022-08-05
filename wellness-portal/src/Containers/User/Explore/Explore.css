@@ -22,3 +22,24 @@
     text-align: center;
     font-size: 20px;
 }
+.line{
+    padding-top:2%;
+}
+.cardtop{
+    width:18rem;
+    background-color:#274ea959;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid #274ea959;
+}
+.cardtitle{
+    padding-bottom:2%;
+        text-align:center;
+        color:#1C3879;
+}
+.cardtext{
+    text-align:center;
+}
+.yes{
+    padding-left: 30%;
+    text-decoration: none;
+}
