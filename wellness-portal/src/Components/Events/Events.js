@@ -12,7 +12,7 @@ const events = () => {
       <Card.Img variant="top" src={event.photo} />  
       </card-img>
       <Card.Body>
-        <Card.Title>{event.title}</Card.Title>
+        <Card.Title><h3>{event.title}</h3></Card.Title>
         <Card.Text>
           {event.desc}
         </Card.Text>
@@ -21,7 +21,7 @@ const events = () => {
     </Card>) : (
       <Card className="cards">
         <Card.Body>
-        <Card.Title>{event.title}</Card.Title>
+        <Card.Title><h3>{event.title}</h3></Card.Title>
         <Card.Text>
           {event.desc}
         </Card.Text>
