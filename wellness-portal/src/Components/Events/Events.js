@@ -12,20 +12,20 @@ const events = () => {
       <Card.Img variant="top" src={event.photo} />  
       </card-img>
       <Card.Body>
-        <Card.Title>{event.title}</Card.Title>
+        <Card.Title><h3>{event.title}</h3></Card.Title>
         <Card.Text>
           {event.desc}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Book Event</Button>
       </Card.Body>
     </Card>) : (
       <Card className="cards">
         <Card.Body>
-        <Card.Title>{event.title}</Card.Title>
+        <Card.Title><h3>{event.title}</h3></Card.Title>
         <Card.Text>
           {event.desc}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Book Event</Button>
       </Card.Body>
       <card-img>
       <Card.Img variant="top" src={event.photo} />  
