@@ -16,7 +16,7 @@ function Auth() {
   }
   useEffect(() => {
     const google = window.google;
-    google.accounts.id.initialize({
+    google.accounts.id.initialize({ 
       client_id:
         "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com",
       callback: handleCallbackResponse,
