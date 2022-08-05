@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { NavBar, Header, Events, LogoBox } from "./Components";
+import { NavBar, Header, Events, LogoBox, LogIn, LogOut } from "./Components";
 import {
   Fitness,
   Yoga,
@@ -14,6 +14,7 @@ import { Footer } from "./Components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Addevent from "./Containers/Admin/Addevent";
 import Removeevent from "./Containers/Admin/Removeevent";
+import Explore from "./Containers/User/Explore/Explore";
 function App() {
   const [isLogged, setIsLogged] = useState(false);
   const changedLogging = () => {
@@ -35,10 +36,17 @@ function App() {
           />
           <Route
             exact
+            path="/explore"
+            element={
+                <Explore/>
+            }
+          />
+          <Route
+            exact
             path="/fitness"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Fitness />
               </>
             }
@@ -48,7 +56,7 @@ function App() {
             path="/yoga"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Yoga />
               </>
             }
@@ -58,7 +66,7 @@ function App() {
             path="/therapy"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Therapy />
               </>
             }
@@ -69,7 +77,7 @@ function App() {
             path="/meditation"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Meditation />
               </>
             }
@@ -79,15 +87,14 @@ function App() {
             path="/mindfulness"
             element={
               <>
-              <LogoBox/>
+                <LogoBox />
                 <Mindfulness />
               </>
             }
           />
           <Route exact path="/admin" element={<Addevent />} />
-          <Route exact path="/removeevent" element={<Removeevent/>} />
+          <Route exact path="/removeevent" element={<Removeevent />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </div>

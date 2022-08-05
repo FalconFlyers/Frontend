@@ -7,12 +7,15 @@ import "./NavBar.css";
 import PopUp from "../PopUp/PopUp";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import LogOut from "../Log/LogOut";
+
 
 const NavBar = (props) => {
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const changedLogging = props.changedLogging;
+
   return !props.isLogged ? (
     <Nav>
       <logo>
@@ -23,11 +26,13 @@ const NavBar = (props) => {
           <Link to="/home">Home</Link>
         </li>
         <li>
-          <button onClick={changedLogging}>Login</button>
+          <Link to="/explore">Explore</Link>
+        </li>
+        <li>
+          <button onClick={handleShow} >Login</button>
           <PopUp
             show={show}
             handleClose={handleClose}
-            setShow={setShow}
             changedLogging={changedLogging}
           />
         </li>
@@ -43,10 +48,13 @@ const NavBar = (props) => {
           <Link to="/home">Home</Link>
         </li>
         <li>
+          <Link to="/explore">Explore</Link>
+        </li>
+        <li>
           <Link to="/admin">Admin</Link>
         </li>
         <li>
-          <button onClick={props.changedLogging}>Logout</button>
+          <LogOut changedLogging={changedLogging}/>
         </li>
       </ul>
     </Nav>

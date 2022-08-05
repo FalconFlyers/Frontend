@@ -37,6 +37,7 @@
 .l1{
     color:#1C3879;
     text-decoration: none;
+    padding-left: 2%;
 }
 .form-group{
     font-weight:bold;
@@ -45,4 +46,13 @@
 .btn-deco{
     padding-top: 4%;
     padding-left: 25%;
+}
+.form-control{
+    padding-bottom:10%;
+}
+.cont{
+    margin-top:2%;
+    margin-bottom:2%;
+    padding-top:1%;
+    padding-bottom:1%;
 }
