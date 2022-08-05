@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { NavBar, Header, Events, LogoBox, LogIn, LogOut } from "./Components";
+import { NavBar, LogoBox, Footer } from "./Components";
 import {
   Fitness,
   Yoga,
@@ -8,13 +8,12 @@ import {
   Meditation,
   Mindfulness,
   Home,
+  Explore,
+  Addevent,
+  Admin,
 } from "./Containers";
-
-import { Footer } from "./Components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Addevent from "./Containers/Admin/Addevent";
-import Removeevent from "./Containers/Admin/Removeevent";
-import Explore from "./Containers/User/Explore/Explore";
+
 function App() {
   const [isLogged, setIsLogged] = useState(false);
   const changedLogging = () => {
@@ -26,8 +25,7 @@ function App() {
         <NavBar changedLogging={changedLogging} isLogged={isLogged} />
         <Routes>
           <Route
-            exact
-            path="/home"
+            path="/"
             element={
               <>
                 <Home changedLogging={changedLogging} isLogged={isLogged} />
@@ -36,39 +34,54 @@ function App() {
           />
           <Route
             exact
-            path="/explore"
+            path="/home"
             element={
-                <Explore/>
+              <>
+                <Home changedLogging={changedLogging} isLogged={isLogged} />
+              </>
             }
           />
+          <Route exact path="/explore" element={<Explore />} />
           <Route
             exact
             path="/fitness"
             element={
-              <>
-                <LogoBox />
-                <Fitness />
-              </>
+              !isLogged ? (
+                <Home />
+              ) : (
+                <>
+                  <LogoBox />
+                  <Fitness />
+                </>
+              )
             }
           />
           <Route
             exact
             path="/yoga"
             element={
-              <>
-                <LogoBox />
-                <Yoga />
-              </>
+              !isLogged ? (
+                <Home />
+              ) : (
+                <>
+                  <LogoBox />
+                  <Yoga />
+                </>
+              )
             }
           />
           <Route
             exact
             path="/therapy"
             element={
-              <>
-                <LogoBox />
-                <Therapy />
-              </>
+              !isLogged ? (
+                <Home />
+              ) : (
+                <>
+                  <LogoBox />
+                  <Therapy />
+                </>
+              )
             }
           />
 
@@ -76,24 +89,39 @@ function App() {
             exact
             path="/meditation"
             element={
-              <>
-                <LogoBox />
-                <Meditation />
-              </>
+              !isLogged ? (
+                <Home />
+              ) : (
+                <>
+                  <LogoBox />
+                  <Meditation />
+                </>
+              )
             }
           />
           <Route
             exact
             path="/mindfulness"
             element={
-              <>
-                <LogoBox />
-                <Mindfulness />
-              </>
+              !isLogged ? (
+                <Home />
+              ) : (
+                <>
+                  <LogoBox />
+                  <Mindfulness />
+                </>
+              )
             }
           />
-          <Route exact path="/admin" element={<Addevent />} />
-          <Route exact path="/removeevent" element={<Removeevent />} />
+          <Route
+            path="/admin/:type"
+            element={!isLogged ? <Home /> : <Admin isLogged={isLogged} />}
+          />
+          <Route
+            exact
+            path="/admin"
+            element={!isLogged ? <Home /> : <Addevent isLogged={isLogged} />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
