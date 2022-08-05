@@ -38,8 +38,8 @@ const Explore = () => {
      </Col>
      </Row > <br></br>
      <Row>
-     <Col><ReactPlayer url='https://www.youtube.com/watch?v=inpok4MKVLM' playing={true} muted={true}/>
-     <h4>5-Minute-Meditation</h4>
+     <Col><ReactPlayer url='https://www.youtube.com/watch?v=nFIfv-jIgbI' playing={true} muted={true}/>
+     <h4>5 Stretches at Your Desk</h4>
      </Col>
      <Col><ReactPlayer url='https://www.youtube.com/watch?v=G0XUimJbz44' playing={true} muted={true}/>
      <h4>Ted-Talk: Workspace Mental Health</h4>
