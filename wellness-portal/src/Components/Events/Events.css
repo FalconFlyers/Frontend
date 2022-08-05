@@ -15,3 +15,10 @@
     align-items: center;
     justify-content: center;
 }
+.cards .card-title{
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+.cards .card-text{
+    padding-bottom: 2%;
+}
