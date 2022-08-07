@@ -52,11 +52,7 @@ const NavBar = (props) => {
           <li>
             <Link to="/admin">Admin</Link>
           </li>
-        ) : (
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-        )}
+        ) : <></>}
         <li>
           <LogOut changedLogging={changedLogging} />
         </li>

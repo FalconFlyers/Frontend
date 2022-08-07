@@ -9,14 +9,12 @@ const addEventUrl = `http://localhost:8080/api/v1/events`;
 
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setName] = useState("");//chg to setName
+  const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [zLink, setZLink] = useState("");
   const [capacity, setCapacity] = useState();
   const [instructor, setInstructor] = useState("");
   const [desc, setDesc] = useState("");
-  //create consts for all fields
-  //const
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
       setEvent(response.data);
@@ -32,8 +30,6 @@ function Addevent() {
         capacity,
         instructor,
         desc
-        //,capacity,type
-        //all data to be sent
       })
       .then((response) => {
         setEvent(response.data);
@@ -42,7 +38,6 @@ function Addevent() {
   const handleClick = (e) => {
     e.preventDefault();
     createEvent();
-    //for checking
     console.log(name);
   };
 
@@ -67,7 +62,7 @@ function Addevent() {
                 type="text"
                 placeholder="Event Name"
                 onChange={(e) => {
-                  setEve(e.target.value);
+                  setName(e.target.value);
                 }}
                 value={name}
               />
