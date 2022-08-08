@@ -6,7 +6,7 @@ const home = (props) => {
     <>
       { 
         (!props.isLogged)
-          ? <> <Header/><Events/> </> 
+          ? <> <Header/><Events changedLogging={props.changedLogging} isLogged={props.isLogged}/> </> 
           : <> <Header/><LogoBox/><MyEvents/></> 
       }
     </>

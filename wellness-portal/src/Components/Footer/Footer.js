@@ -24,7 +24,7 @@ export default function Footer() {
           <FontAwesomeIcon icon={faInstagram} size="2x" />
         </a>
       </div>
-      <h3 style={{ paddingTop: "2%", paddingBottom: "2%", color: "#eee" }}>
+      <h3 className="foot">
         <i>"Relaxation is the stepping stone to Tranquility"</i>
       </h3>
     </div>
