@@ -13,29 +13,29 @@ const Header = () => {
       <Carousel.Item>
           <img src={pic4} alt="First slide" />
         <Carousel.Caption>
-          <h3>Yoga to start a brand new day</h3>
-          <p>Improve your strength, balance, flexibility and agility.</p>
+          <h3 className="car">Yoga to start a brand new day</h3>
+          <p className="car">Improve your strength, balance, flexibility and agility.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
           <img src={pic2} alt="First slide" />
         <Carousel.Caption>
-          <h3>Fitness Everyday</h3>
-          <p>Stretch your body to enable your muscles work effectively.</p>
+          <h3 className="car">Fitness Everyday</h3>
+          <p className="car">Stretch your body to enable your muscles work effectively.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
           <img src={pic3} alt="First slide" />
         <Carousel.Caption>
-          <h3>Every Moment of Mindfulness</h3>
-          <p>Increase your EQ, and decrease your Anxiety !</p>
+          <h3 className="car">Every Moment of Mindfulness</h3>
+          <p className="car">Increase your EQ, and decrease your Anxiety !</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
           <img src={pic1} alt="First slide" />
         <Carousel.Caption>
-          <h3>Push Up Challenge Day</h3>
-          <p>Ready to burn some calories?? Lets make fit your upper body today!! </p>
+          <h3 className="car">Push Up Challenge Day</h3>
+          <p className="car">Ready to burn some calories?? Lets make fit your upper body today!! </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
