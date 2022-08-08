@@ -50,6 +50,7 @@ function Addevent() {
         </Link>
         <Link className="l1" to="/admin/removeevent">
           Remove Events
+          
         </Link>
       </div>
       <div className="container">
