@@ -6,15 +6,18 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const addEventUrl = `http://localhost:8080/api/v1/events`;
-
+const disablePastDate = () => {
+  const today = new Date();
+  const dd = String(today.getDate() + 1).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); 
+  const yyyy = today.getFullYear();
+  return yyyy + "-" + mm + "-" + dd;
+};
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setName] = useState("");
-  const [type, setType] = useState("");
-  const [zLink, setZLink] = useState("");
-  const [capacity, setCapacity] = useState();
-  const [instructor, setInstructor] = useState("");
-  const [desc, setDesc] = useState("");
+  const [name, setEve] = useState(""); //chg to setName
+  //create consts for all fields
+  //const
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
       setEvent(response.data);
@@ -25,11 +28,8 @@ function Addevent() {
     axios
       .post(addEventUrl, {
         name,
-        type,
-        zLink,
-        capacity,
-        instructor,
-        desc
+        //,capacity,type
+        //all data to be sent
       })
       .then((response) => {
         setEvent(response.data);
@@ -38,6 +38,7 @@ function Addevent() {
   const handleClick = (e) => {
     e.preventDefault();
     createEvent();
+    //for checking
     console.log(name);
   };
 
@@ -62,7 +63,7 @@ function Addevent() {
                 type="text"
                 placeholder="Event Name"
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setEve(e.target.value);
                 }}
                 value={name}
               />
@@ -72,7 +73,7 @@ function Addevent() {
               Date:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="date" />
+              <Form.Control type="date"  min={disablePastDate()}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
