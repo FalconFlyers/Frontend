@@ -89,6 +89,13 @@ function Addevent() {
                 <option>Meditation</option>
               </Form.Select>
             </Col>
+            <Col sm={2}></Col>
+            <Form.Label column sm={2}>
+                Image:
+            </Form.Label>
+            <Col sm={3}>
+              <Form.Control type="file"/>
+            </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
@@ -113,6 +120,7 @@ function Addevent() {
               <Form.Control type="text" placeholder="Instructor Name" />
             </Col>
             <Col sm={2}></Col>
+           
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
