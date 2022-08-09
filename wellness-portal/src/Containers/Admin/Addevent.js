@@ -6,12 +6,24 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const addEventUrl = `http://localhost:8080/api/v1/events`;
-
+const disablePastDate = () => {
+  const today = new Date();
+  const dd = String(today.getDate() + 1).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); 
+  const yyyy = today.getFullYear();
+  return yyyy + "-" + mm + "-" + dd;
+};
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setEve] = useState(""); //chg to setName
-  //create consts for all fields
-  //const
+  const [name, setName] = useState(""); 
+  const [type, setType] = useState("");
+  const [zlink, setZlink] = useState("");
+  const [capacity, setCapacity] = useState();
+  const [instr, setInstr] = useState("");
+  const [desc, setDesc] = useState("");
+  const [date, setDate] = useState("");
+  const [time,setTime] = useState("");
+
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
       setEvent(response.data);
@@ -21,9 +33,8 @@ function Addevent() {
   function createEvent() {
     axios
       .post(addEventUrl, {
-        name,
-        //,capacity,type
-        //all data to be sent
+        name,type,zlink,capacity,instr,desc,date,time
+      
       })
       .then((response) => {
         setEvent(response.data);
@@ -34,6 +45,7 @@ function Addevent() {
     createEvent();
     //for checking
     console.log(name);
+    console.log(time);
   };
 
   return (
@@ -44,6 +56,7 @@ function Addevent() {
         </Link>
         <Link className="l1" to="/admin/removeevent">
           Remove Events
+          
         </Link>
       </div>
       <div className="container">
@@ -57,7 +70,7 @@ function Addevent() {
                 type="text"
                 placeholder="Event Name"
                 onChange={(e) => {
-                  setEve(e.target.value);
+                  setName(e.target.value);
                 }}
                 value={name}
               />
@@ -67,7 +80,11 @@ function Addevent() {
               Date:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="date" />
+              <Form.Control type="date"  min={disablePastDate()}
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
+              value={date}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -75,13 +92,25 @@ function Addevent() {
               Event Type:
             </Form.Label>
             <Col sm={2}>
-              <Form.Select>
-                <option>Yoga</option>
-                <option>Therapy</option>
-                <option>MindFullness</option>
-                <option>Fitness</option>
-                <option>Meditation</option>
-              </Form.Select>
+              <Form.Control as="select"  
+              onChange={(e) => {
+                setType(e.target.value);
+              }}
+              value={type}>
+                <option value="Yoga">Yoga</option>
+                <option value="Therapy">Therapy</option>
+                <option value="Mindfulness">MindFulness</option>
+                <option value = "Fitness">Fitness</option>
+                <option value= "Meditation"> Meditation</option>
+               
+              </Form.Control>
+            </Col>
+            <Col sm={2}></Col>
+            <Form.Label column sm={2}>
+                Image:
+            </Form.Label>
+            <Col sm={3}>
+              <Form.Control type="file"/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -89,14 +118,22 @@ function Addevent() {
               Capacity:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="Number" min="0" placeholder="Capacity" />
+              <Form.Control type="Number" min="0" placeholder="Capacity"
+              onChange={(e) => {
+                setCapacity(e.target.value);
+              } }
+              value={capacity}/>
             </Col>
             <Col sm={2}></Col>
             <Form.Label column sm={2}>
               Time:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="time" placeholder="Time" />
+              <Form.Control type="time" placeholder="Time" 
+                  onChange={(e) => {
+                  setTime(e.target.value);
+                }}
+                value={time}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -104,9 +141,14 @@ function Addevent() {
               Instructor:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="text" placeholder="Instructor Name" />
+              <Form.Control type="text" placeholder="Instructor Name" 
+              onChange={(e) => {
+                setInstr(e.target.value);
+              }}
+              value={instr}/>
             </Col>
             <Col sm={2}></Col>
+           
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
@@ -117,6 +159,10 @@ function Addevent() {
                 type="text"
                 placeholder="Zoom Link"
                 className="form-control"
+                onChange={(e) => {
+                  setZlink(e.target.value);
+                }}
+                value={zlink}
               />
             </Col>
             <Col sm={1}></Col>
@@ -128,6 +174,10 @@ function Addevent() {
                 type="text"
                 placeholder="Event Description"
                 className="form-control"
+                onChange={(e) => {
+                  setDesc(e.target.value);
+                }}
+                value={desc}
               />
             </Col>
           </Form.Group>

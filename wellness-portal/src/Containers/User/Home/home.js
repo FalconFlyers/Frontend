@@ -6,11 +6,11 @@ const home = (props) => {
     <>
       { 
         (!props.isLogged)
-          ? <> <Header/><Events/> </> 
+          ? <> <Header/><Events changedLogging={props.changedLogging} /> </> 
           : <> <Header/><LogoBox/><MyEvents/></> 
       }
     </>
   );
 }
 
-export default home
+export default home;

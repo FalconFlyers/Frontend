@@ -113,15 +113,15 @@ function App() {
               )
             }
           />
-          <Route
+          {/* <Route
             path="/admin/:type"
             element={!isLogged ? <Home /> : <Admin isLogged={isLogged} />}
-          />
+          />*/}
           <Route
             exact
             path="/admin"
             element={!isLogged ? <Home /> : <Addevent isLogged={isLogged} />}
-          />
+          /> 
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,30 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Yoga.css";
 import Card from "react-bootstrap/Card";
 import yoga from "./Yoga-list";
 
+//const apiUrl = `http://localhost:8080/api/v1/events/all`
+const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
 const Yoga = () => {
-  const myYoga = yoga.map((yoga) => (
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    axios.get(apiUrl).then((response) => {
+      setPost(response.data);
+    })
+  }, [setPost]);
+  // const myYoga = yoga.map((yoga) => (
+    const myYoga = post.map((post) => (
     <>
       <Card className="yoga">
-        <card-img>
+        {/* <card-img>
           <Card.Img variant="top" src={yoga.photo} />
-        </card-img>
+        </card-img> */}
         <Card.Body>
           <Card.Title>
-            <h4>{yoga.title}</h4>
+            <h4>{post.title}</h4>
           </Card.Title>
           <Card.Text>
             <b>Description: </b>
-            {yoga.desc}
+            {post.desc}
           </Card.Text>
           <Card.Text>
             <b>Bookings Available: </b>
-            {yoga.Book_Avai}
-            <br></br>
+            {post.capacity}
+            {/* <br></br>
             Date: {yoga.date}
             <br></br>
-            Time: {yoga.time}
+            Time: {yoga.time} */}
           </Card.Text>
 
           <button variant="primary">Book Now</button>
