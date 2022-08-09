@@ -16,6 +16,13 @@ const disablePastDate = () => {
 function Addevent() {
   const [event, setEvent] = useState([]);
   const [name, setEve] = useState(""); //chg to setName
+  const [capacity,setCapacity]=useState([]);
+  const [instructor,setInstructor]=useState([]);
+  const [zlink,setZlink]=useState([]);
+  const [desc,setDesc]=useState([]);
+  const [date,setDate]=useState([]);
+  const [time,setTime]=useState([]);
+  const [image,setImage]=useState([]);
   //create consts for all fields
   //const
   useEffect(() => {
@@ -39,9 +46,18 @@ function Addevent() {
     e.preventDefault();
     createEvent();
     //for checking
+    setEvent('');
+    setEve('');
+    setCapacity('');
+    setInstructor('');
+    setZlink('');
+    setDesc('');
+    setDate('');
+    setTime('');
+    setImage('');
     console.log(name);
   };
-
+  
   return (
     <>
       <div className="header">
@@ -74,7 +90,10 @@ function Addevent() {
               Date:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="date"  min={disablePastDate()}/>
+              <Form.Control type="date"  min={disablePastDate()}   onChange={(e) => {
+                  setDate(e.target.value);
+                }}
+                value={date}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -95,7 +114,10 @@ function Addevent() {
                 Image:
             </Form.Label>
             <Col sm={3}>
-              <Form.Control type="file"/>
+              <Form.Control type="file"  onChange={(e) => {
+                  setImage(e.target.value);
+                }}
+                value={image}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -103,14 +125,20 @@ function Addevent() {
               Capacity:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="Number" min="0" placeholder="Capacity" />
+              <Form.Control type="Number" min="0" placeholder="Capacity"   onChange={(e) => {
+                  setCapacity(e.target.value);
+                }}
+                value={capacity} />
             </Col>
             <Col sm={2}></Col>
             <Form.Label column sm={2}>
               Time:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="time" placeholder="Time" />
+              <Form.Control type="time" placeholder="Time"   onChange={(e) => {
+                  setTime(e.target.value);
+                }}
+                value={time}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -118,7 +146,10 @@ function Addevent() {
               Instructor:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="text" placeholder="Instructor Name" />
+              <Form.Control type="text" placeholder="Instructor Name"   onChange={(e) => {
+                  setInstructor(e.target.value);
+                }}
+                value={instructor}/>
             </Col>
             <Col sm={2}></Col>
            
@@ -132,6 +163,10 @@ function Addevent() {
                 type="text"
                 placeholder="Zoom Link"
                 className="form-control"
+                onChange={(e) => {
+                  setZlink(e.target.value);
+                }}
+                value={zlink}
               />
             </Col>
             <Col sm={1}></Col>
@@ -143,12 +178,16 @@ function Addevent() {
                 type="text"
                 placeholder="Event Description"
                 className="form-control"
+                onChange={(e) => {
+                  setDesc(e.target.value);
+                }}
+                value={desc}
               />
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="btn-deco">
             <Col sm={{ span: 10, offset: 2 }}>
-              <button className="btn" onClick={handleClick}>
+              <button className="btn" onClick={handleClick} >
                 ADD EVENT
               </button>
             </Col>
