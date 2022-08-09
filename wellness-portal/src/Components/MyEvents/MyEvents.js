@@ -4,7 +4,7 @@ import "./MyEvents.css";
 import Card from "react-bootstrap/Card";
 import fit from "./MyEventsList";
 
-const apiUrl = `http://localhost:8080/api/v1/user/user001/events`;
+const apiUrl = `http://localhost:8080/api/v1/user/abc@gmail.com/events`;
 const Fitness = () => {
   const [post, setPost] = useState([]);
   useEffect(() => {

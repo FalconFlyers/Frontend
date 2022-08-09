@@ -6,10 +6,42 @@ import pic2 from "../../images/pic2.jpg";
 import pic3 from "../../images/pic3.jpg";
 import pic4 from "../../images/pic4.jpg";
 import "./Carousel.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
+const apiUrl = `http://localhost:8080/api/v1/upcomingevents`
+
+
 
 const Header = () => {
+  const [post, setPost] = useState([]);
+useEffect(() => {
+  axios.get(apiUrl).then((response) => {
+    setPost(response.data);
+  })
+  }, [setPost]);
+
+  const UpcomingEvents = post.map((event)=>(
+    <Carousel.Item>
+        <img src={pic4} alt="First slide" />
+        <Carousel.Caption>
+        <h3>{event.name}</h3>
+        <p>{event.desc}</p>
+        </Carousel.Caption>
+        </Carousel.Item>
+  ))
+
+
   return (
-    <Carousel className="header">
+    <Carousel className="header">{UpcomingEvents}</Carousel>
+  );
+  
+};
+
+export default Header;
+
+/* <Carousel className="header">
       <Carousel.Item>
           <img src={pic4} alt="First slide" />
         <Carousel.Caption>
@@ -38,9 +70,4 @@ const Header = () => {
           <p className="car">Ready to burn some calories?? Lets make fit your upper body today!! </p>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>
-  );
-  
-};
-
-export default Header;
+    </Carousel> */

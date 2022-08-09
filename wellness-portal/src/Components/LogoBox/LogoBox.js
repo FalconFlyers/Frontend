@@ -14,7 +14,7 @@ function LogoBox() {
         <Link className="link" to="/yoga">
           <Figure>
             <figimage>
-              <img src={yoga} />
+              <img className="Yoga_logo" src={yoga} />
             </figimage>
             <Figure.Caption>YOGA</Figure.Caption>
           </Figure>
@@ -22,15 +22,15 @@ function LogoBox() {
         <Link className="link" to="/mindfulness">
           <Figure>
             <figimage>
-              <img src={mindfulness} />
+              <img className="Mindfulness_logo" src={mindfulness} />
             </figimage>
-            <Figure.Caption>MINDFULLNESS</Figure.Caption>
+            <Figure.Caption>MINDFULNESS</Figure.Caption>
           </Figure>
         </Link>
         <Link className="link" to="/meditation">
           <Figure>
-            <figimage>
-              <img src={meditation} />
+          <figimage>
+              <img className ="Meditation_logo" src={meditation} />
             </figimage>
             <Figure.Caption> MEDITATION</Figure.Caption>
           </Figure>
@@ -38,7 +38,7 @@ function LogoBox() {
         <Link className="link" to="/therapy">
           <Figure>
             <figimage>
-              <img src={therapy} />
+              <img className="Therapy_logo" src={therapy} />
             </figimage>
             <Figure.Caption>THERAPY</Figure.Caption>
           </Figure>
@@ -46,7 +46,7 @@ function LogoBox() {
         <Link className="link" to="/fitness">
           <Figure>
             <figimage>
-              <img src={fitness} />
+              <img className="Fitness_logo" src={fitness} />
             </figimage>
             <Figure.Caption> FITNESS</Figure.Caption>
           </Figure>
