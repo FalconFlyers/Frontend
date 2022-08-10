@@ -17,12 +17,12 @@ const Yoga = () => {
     const myYoga = post.map((post) => (
     <>
       <Card className="yoga">
-        {/* <card-img>
-          <Card.Img variant="top" src={yoga.photo} />
-        </card-img> */}
+        <card-img>
+          <Card.Img variant="top" src={post.image} />
+        </card-img>
         <Card.Body>
           <Card.Title>
-            <h4>{post.title}</h4>
+            <h4>{post.name}</h4>
           </Card.Title>
           <Card.Text>
             <b>Description: </b>

@@ -22,7 +22,7 @@ function Addevent() {
   const [desc,setDesc]=useState([]);
   const [date,setDate]=useState([]);
   const [time,setTime]=useState([]);
-  const [image,setImage]=useState([]);
+  const [image,setImage]=useState("");
   //create consts for all fields
   //const
   useEffect(() => {
@@ -111,10 +111,12 @@ function Addevent() {
             </Col>
             <Col sm={2}></Col>
             <Form.Label column sm={2}>
-                Image:
+                Image URL:
             </Form.Label>
             <Col sm={3}>
-              <Form.Control type="file"  onChange={(e) => {
+              <Form.Control type="text"
+                placeholder="Image URL"
+                onChange={(e) => {
                   setImage(e.target.value);
                 }}
                 value={image}/>
