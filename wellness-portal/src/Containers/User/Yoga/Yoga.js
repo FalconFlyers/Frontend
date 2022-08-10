@@ -31,10 +31,10 @@ const Yoga = () => {
           <Card.Text>
             <b>Bookings Available: </b>
             {post.capacity}
-            {/* <br></br>
-            Date: {yoga.date}
+             <br></br>
+            Date: {post.date}
             <br></br>
-            Time: {yoga.time} */}
+            Time: {post.time} 
           </Card.Text>
 
           <button variant="primary">Book Now</button>

@@ -17,9 +17,9 @@ function Addevent() {
   const [event, setEvent] = useState([]);
   const [name, setName] = useState(""); 
   const [type, setType] = useState("");
-  const [zlink, setZlink] = useState("");
+  const [zLink, setZlink] = useState("");
   const [capacity, setCapacity] = useState();
-  const [instr, setInstr] = useState("");
+  const [instructor, setInstr] = useState("");
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
   const [time,setTime] = useState("");
@@ -33,7 +33,7 @@ function Addevent() {
   function createEvent() {
     axios
       .post(addEventUrl, {
-        name,type,zlink,capacity,instr,desc,date,time
+        name,type,zLink,capacity,instructor,desc,date,time
       
       })
       .then((response) => {
@@ -97,11 +97,11 @@ function Addevent() {
                 setType(e.target.value);
               }}
               value={type}>
-                <option value="Yoga">Yoga</option>
-                <option value="Therapy">Therapy</option>
-                <option value="Mindfulness">MindFulness</option>
-                <option value = "Fitness">Fitness</option>
-                <option value= "Meditation"> Meditation</option>
+                <option value="yoga">Yoga</option>
+                <option value="therapy">Therapy</option>
+                <option value="mindfulness">MindFulness</option>
+                <option value = "fitness">Fitness</option>
+                <option value= "meditation"> Meditation</option>
                
               </Form.Control>
             </Col>
@@ -145,7 +145,7 @@ function Addevent() {
               onChange={(e) => {
                 setInstr(e.target.value);
               }}
-              value={instr}/>
+              value={instructor}/>
             </Col>
             <Col sm={2}></Col>
            
@@ -162,7 +162,7 @@ function Addevent() {
                 onChange={(e) => {
                   setZlink(e.target.value);
                 }}
-                value={zlink}
+                value={zLink}
               />
             </Col>
             <Col sm={1}></Col>

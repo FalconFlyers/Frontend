@@ -1,17 +1,25 @@
 import React from "react";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./Mindfulness.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import mind from "./MindfulnessList";
 
+const apiUrl = `http://localhost:8080/api/v1/events/type/mindfulness`
 const Mindfulness = () => {
+  const [mind, setmind] = useState([]);
+  useEffect(() => {
+    axios.get(apiUrl).then((response) => {
+      setmind(response.data);
+    })
+  }, [setmind]);
   const myMind = mind.map((mind) => (
     <>
       <Card className="mind">
-        <card-img>
+        {/* <card-img>
           <Card.Img variant="top" src={mind.photo} />
-        </card-img>
+        </card-img> */}
         <Card.Body>
           <Card.Title>
             <h4>{mind.title}</h4>
@@ -22,7 +30,7 @@ const Mindfulness = () => {
           </Card.Text>
           <Card.Text>
             <b>Bookings Available:</b>
-            {mind.Book_Avai}
+            {mind.capacity}
             <br></br>
             Date:{mind.date}
             <br></br>
