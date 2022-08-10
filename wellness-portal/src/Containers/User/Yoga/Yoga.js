@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Yoga.css";
 import Card from "react-bootstrap/Card";
 import yoga from "./Yoga-list";
+import Button from "react-bootstrap/Button";
 
 //const apiUrl = `http://localhost:8080/api/v1/events/all`
 const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
@@ -17,12 +18,12 @@ const Yoga = () => {
     const myYoga = post.map((post) => (
     <>
       <Card className="yoga">
-        {/* <card-img>
-          <Card.Img variant="top" src={yoga.photo} />
-        </card-img> */}
+        <card-img>
+          <Card.Img variant="top" src={post.image_link} />
+        </card-img>
         <Card.Body>
           <Card.Title>
-            <h4>{post.title}</h4>
+            <h4>{post.name}</h4>
           </Card.Title>
           <Card.Text>
             <b>Description: </b>
@@ -31,13 +32,12 @@ const Yoga = () => {
           <Card.Text>
             <b>Bookings Available: </b>
             {post.capacity}
-            {/* <br></br>
-            Date: {yoga.date}
             <br></br>
-            Time: {yoga.time} */}
+            Date:{post.date}
+            <br></br>
+            Time:{post.time}
           </Card.Text>
-
-          <button variant="primary">Book Now</button>
+          <Button variant="primary">Book Now</Button>
         </Card.Body>
       </Card>
     </>

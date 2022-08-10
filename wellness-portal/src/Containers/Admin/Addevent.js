@@ -23,7 +23,7 @@ function Addevent() {
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
   const [time,setTime] = useState("");
-  // const [image,setImage]=useState([]);
+  const [image_link,setImgLink]=useState("");
 
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
@@ -34,7 +34,7 @@ function Addevent() {
   function createEvent() {
     axios
       .post(addEventUrl, {
-        name,type,zLink,capacity,instructor,desc,date,time
+        name,type,zLink,capacity,instructor,desc,date,time, image_link
       })
       .then((response) => {
         setEvent(response.data);
@@ -108,17 +108,6 @@ function Addevent() {
               </Form.Control>
             </Col>
             <Col sm={2}></Col>
-            <Form.Label column sm={2}>
-                Image:
-            </Form.Label>
-            <Col sm={3}>
-              <Form.Control type="file"  
-                // onChange={(e) => {
-                //   setImage(e.target.value);
-                // }}
-                // value={image}
-                />
-            </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
@@ -155,7 +144,16 @@ function Addevent() {
               value={instructor}/>
             </Col>
             <Col sm={2}></Col>
-           
+            <Form.Label column sm={2}>
+              Image Link:
+            </Form.Label>
+            <Col sm={2}>
+              <Form.Control type="text" placeholder="Image Link" 
+              onChange={(e) => {
+                setImgLink(e.target.value);
+              }}
+              value={image_link}/>
+            </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
