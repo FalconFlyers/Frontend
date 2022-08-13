@@ -57,6 +57,7 @@ function Addevent() {
     setDate('');
     setTime('');
     setImage('');
+    alert("You have added the event successfully!");
     console.log(name);
     console.log(type);
     console.log(capacity);
