@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Yoga.css";
 import Card from "react-bootstrap/Card";
-import yoga from "./Yoga-list";
 
 //const apiUrl = `http://localhost:8080/api/v1/events/all`
 const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
@@ -37,7 +36,7 @@ const Yoga = () => {
             Time: {yoga.time} */}
           </Card.Text>
 
-          <button variant="primary">Book Now</button>
+          <button variant="primary"  onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>
         </Card.Body>
       </Card>
     </>

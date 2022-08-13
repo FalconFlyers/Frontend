@@ -2,7 +2,6 @@ import React,{useState, useEffect} from "react";
 import axios from "axios";
 import "./MyEvents.css";
 import Card from "react-bootstrap/Card";
-import fit from "./MyEventsList";
 
 const apiUrl = `http://localhost:8080/api/v1/user/user001/events`;
 const Fitness = () => {
@@ -34,7 +33,7 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary">Cancel</button>
+          <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Cancel</button>
         </Card.Body>
       </Card>
     </>

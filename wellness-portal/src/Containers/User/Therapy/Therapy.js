@@ -3,7 +3,6 @@ import "./Therapy.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ther from "./TherapyList";
-
 const Therapy = () => {
   const myTher = ther.map((ther) => (
     <>
@@ -27,7 +26,7 @@ const Therapy = () => {
             <br></br>
             Time:{ther.time}
           </Card.Text>
-          <Button variant="primary">Book Now</Button>
+          <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button>
         </Card.Body>
       </Card>
     </>

@@ -16,6 +16,7 @@ const disablePastDate = () => {
 function Addevent() {
   const [event, setEvent] = useState([]);
   const [name, setEve] = useState(""); //chg to setName
+  const[type,setType]=useState("");
   const [capacity,setCapacity]=useState([]);
   const [instructor,setInstructor]=useState([]);
   const [zlink,setZlink]=useState([]);
@@ -35,7 +36,8 @@ function Addevent() {
     axios
       .post(addEventUrl, {
         name,
-        //,capacity,type
+        capacity,
+        type
         //all data to be sent
       })
       .then((response) => {
@@ -56,6 +58,8 @@ function Addevent() {
     setTime('');
     setImage('');
     console.log(name);
+    console.log(type);
+    console.log(capacity);
   };
   
   return (
@@ -101,13 +105,16 @@ function Addevent() {
               Event Type:
             </Form.Label>
             <Col sm={2}>
-              <Form.Select>
-                <option>Yoga</option>
+              <Form.Control as="select" onChange={(e)=>{
+                setType(e.target.value);
+              }} value={type}>
+                <option >Not selected</option>
+                <option value="yoga">Yoga</option>
                 <option>Therapy</option>
                 <option>MindFullness</option>
-                <option>Fitness</option>
+                <option value="fitness">Fitness</option>
                 <option>Meditation</option>
-              </Form.Select>
+              </Form.Control>
             </Col>
             <Col sm={2}></Col>
             <Form.Label column sm={2}>
