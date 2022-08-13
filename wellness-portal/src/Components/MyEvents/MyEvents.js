@@ -33,7 +33,7 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Cancel</button>
+          <button variant="primary" onClick={()=>alert("You have cancelled  the event successfully!")}>Cancel</button>
         </Card.Body>
       </Card>
     </>
