@@ -2,29 +2,39 @@ import React from "react";
 import "./Therapy.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import ther from "./TherapyList";
-const Therapy = () => {
-  const myTher = ther.map((ther) => (
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const apiUrl = `http://localhost:8080/api/v1/events/type/therapy`
+const Ther = () => {
+  const [therapy, setTherapy] = useState([]);
+  useEffect(() => {
+    axios.get(apiUrl).then((response) => {
+      setTherapy(response.data);
+    })
+  }, [setTherapy]);
+  
+  const mytherapy = therapy.map((therapy) => (
     <>
-      <Card className="therapy">
-        <card-img>
-          <Card.Img variant="top" src={ther.photo} />
-        </card-img>
+       <Card className="therapy"> 
+         {/* <card-img>
+          <Card.Img variant="top" src={therapy.photo} />
+        </card-img>   */}
         <Card.Body>
           <Card.Title>
-            <h4>{ther.title}</h4>
+            <h4>{therapy.title}</h4>
           </Card.Title>
           <Card.Text>
             <b>Description:</b>
-            {ther.desc}
+            {therapy.desc}
           </Card.Text>
           <Card.Text>
             <b>Bookings Available:</b>
-            {ther.Book_Avai}
+            {therapy.Book_Avai}
             <br></br>
-            Date:{ther.date}
+            Date:{therapy.date}
             <br></br>
-            Time:{ther.time}
+            Time:{therapy.time}
           </Card.Text>
           <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button>
         </Card.Body>
@@ -43,11 +53,11 @@ const Therapy = () => {
             </i>
           </h5>
         </div>
-        <h3>Book Your Therapy Event</h3>
+        <h3>Book Your therapy Event</h3>
       </div>
-      {myTher}
+      {mytherapy}
     </>
   );
 };
 
-export default Therapy;
+export default Ther;

@@ -56,14 +56,14 @@ const Explore = () => {
                 <h3>What is Wellness?</h3>
               </Card.Title>
               <div>
-              Wellness is an active process of becoming aware of and making choices towards a healthy and fulfilling life.  It is more than being free from 
+              Wellness is an active process of becoming aware of and making choices towards a healthy and fulfilling life.  It is more than being free from.... 
               {readMore && extraContent}
-              <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+              {/* <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a> */}
               </div>
               <Card.Text className="cardtext">
               
               </Card.Text>
-              <Card.Link  className="yes"  href="https://www.globalwellnessday.org/about/what-is-wellness/">Explore More</Card.Link>
+              <Card.Link  className="yes"  href="https://www.globalwellnessday.org/about/what-is-wellness/">Read More</Card.Link>
             </Card.Body>
           </Card>
 
