@@ -1,7 +1,6 @@
 import React from "react";
-// import Button from 'react-bootstrap/Button';
 import Modal from "react-bootstrap/Modal";
-import Auth from "../Auth/Auth";
+import LogIn from "../Log/LogIn";
 import "./PopUp.css";
 
 function PopUp(props) {
@@ -15,7 +14,7 @@ function PopUp(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="auth">
-            <Auth />
+            <LogIn handleClose={props.handleClose} changedLogging={props.changedLogging} setFlagAdmin={props.setFlagAdmin}/>
           </div>
         </Modal.Body>
       </Modal>

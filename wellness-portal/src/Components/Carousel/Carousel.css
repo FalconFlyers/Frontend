@@ -1,6 +1,9 @@
-.carousel{
+.header .carousel{
     margin-bottom: 10px;
 }
-img{
+.header img{
     max-width: 100%;
+}
+.car{
+    text-shadow: 2px 2px 2px black;
 }

@@ -1,44 +1,63 @@
 import React, { useState } from "react";
-// import { useState } from 'react-hook-use-state';
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
 import PopUp from "../PopUp/PopUp";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import LogOut from "../Log/LogOut";
 
 const NavBar = (props) => {
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
+  const changedLogging = props.changedLogging;
+  const [flagAdmin, setFlagAdmin] = useState(false);
 
-  return (
-    <Navbar bg="primary" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home">
-          <img
-            src={process.env.PUBLIC_URL + "images/Balance_within_you logo.png"}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            //   alt="WP logo"
+  return !props.isLogged ? (
+    <Nav>
+      <logo>
+        <img src={process.env.PUBLIC_URL + "images/BWY.png"} />
+      </logo>
+      <ul class="topnav">
+        <li>
+          <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/explore">Explore</Link>
+        </li>
+        <li>
+          <button onClick={handleShow}>Login</button>
+          <PopUp
+            show={show}
+            handleClose={handleClose}
+            changedLogging={changedLogging}
+            setFlagAdmin={setFlagAdmin}
           />
-        </Navbar.Brand>
-        <Navbar.Brand href="#home">WP</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Explore</Nav.Link>
-          <Nav.Link href="#pricing">
-            <Button style={{ marginLeft: 850 }} onClick={handleShow}>
-              LOGIN
-            </Button>
-          </Nav.Link>
-          <PopUp show={show} handleClose={handleClose} setShow={setShow} />
-        </Nav>
-      </Container>
-    </Navbar>
+        </li>
+      </ul>
+    </Nav>
+  ) : (
+    <Nav>
+      <logo>
+        <img src={process.env.PUBLIC_URL + "images/BWY.png"} />
+      </logo>
+      <ul class="topnav">
+        <li>
+          <Link to="/home">Home</Link>
+        </li>
+        <li>
+          <Link to="/explore">Explore</Link>
+        </li>
+        {flagAdmin ? (
+          <li>
+            <Link to="/admin">Admin</Link>
+          </li>
+        ) : <></>}
+        <li>
+          <LogOut changedLogging={changedLogging} />
+        </li>
+      </ul>
+    </Nav>
   );
 };
 
