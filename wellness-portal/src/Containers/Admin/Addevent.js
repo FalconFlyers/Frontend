@@ -19,10 +19,12 @@ function Addevent() {
   const [type, setType] = useState("");
   const [zLink, setZlink] = useState("");
   const [capacity, setCapacity] = useState();
-  const [instructor, setInstr] = useState("");
+  const [instructor, setInstructor] = useState("");
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
   const [time,setTime] = useState("");
+  const [image,setImage] = useState("");
+
 
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
@@ -45,7 +47,6 @@ function Addevent() {
     createEvent();
     //for checking
     setEvent('');
-    setEve('');
     setCapacity('');
     setInstructor('');
     setZlink('');
@@ -175,7 +176,7 @@ function Addevent() {
                 onChange={(e) => {
                   setZlink(e.target.value);
                 }}
-                value={zlink}
+                value={zLink}
               />
             </Col>
             <Col sm={1}></Col>
