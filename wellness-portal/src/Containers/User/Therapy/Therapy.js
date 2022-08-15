@@ -36,7 +36,7 @@ const Ther = () => {
             <br></br>
             Time:{therapy.time}
           </Card.Text>
-          <Button variant="primary">Book Now</Button>
+          <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button>
         </Card.Body>
       </Card>
     </>

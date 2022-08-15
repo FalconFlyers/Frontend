@@ -19,10 +19,12 @@ function Addevent() {
   const [type, setType] = useState("");
   const [zLink, setZlink] = useState("");
   const [capacity, setCapacity] = useState();
-  const [instructor, setInstr] = useState("");
+  const [instructor, setInstructor] = useState("");
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
   const [time,setTime] = useState("");
+  const [image,setImage] = useState("");
+
 
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
@@ -44,10 +46,20 @@ function Addevent() {
     e.preventDefault();
     createEvent();
     //for checking
+    setEvent('');
+    setCapacity('');
+    setInstructor('');
+    setZlink('');
+    setDesc('');
+    setDate('');
+    setTime('');
+    setImage('');
+    alert("You have added the event successfully!");
     console.log(name);
-    console.log(time);
+    console.log(type);
+    console.log(capacity);
   };
-
+  
   return (
     <>
       <div className="header">
@@ -92,25 +104,28 @@ function Addevent() {
               Event Type:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control as="select"  
-              onChange={(e) => {
+              <Form.Control as="select" onChange={(e)=>{
                 setType(e.target.value);
-              }}
-              value={type}>
+              }} value={type}>
+                <option >Not selected</option>
                 <option value="yoga">Yoga</option>
-                <option value="therapy">Therapy</option>
-                <option value="mindfulness">MindFulness</option>
-                <option value = "fitness">Fitness</option>
-                <option value= "meditation"> Meditation</option>
-               
+                <option>Therapy</option>
+                <option>MindFullness</option>
+                <option value="fitness">Fitness</option>
+                <option>Meditation</option>
               </Form.Control>
             </Col>
             <Col sm={2}></Col>
             <Form.Label column sm={2}>
-                Image:
+                Image URL:
             </Form.Label>
             <Col sm={3}>
-              <Form.Control type="file"/>
+              <Form.Control type="text"
+                placeholder="Image URL"
+                onChange={(e) => {
+                  setImage(e.target.value);
+                }}
+                value={image}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -141,11 +156,10 @@ function Addevent() {
               Instructor:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="text" placeholder="Instructor Name" 
-              onChange={(e) => {
-                setInstr(e.target.value);
-              }}
-              value={instructor}/>
+              <Form.Control type="text" placeholder="Instructor Name"   onChange={(e) => {
+                  setInstructor(e.target.value);
+                }}
+                value={instructor}/>
             </Col>
             <Col sm={2}></Col>
            
@@ -183,7 +197,7 @@ function Addevent() {
           </Form.Group>
           <Form.Group as={Row} className="btn-deco">
             <Col sm={{ span: 10, offset: 2 }}>
-              <button className="btn" onClick={handleClick}>
+              <button className="btn" onClick={handleClick} >
                 ADD EVENT
               </button>
             </Col>
