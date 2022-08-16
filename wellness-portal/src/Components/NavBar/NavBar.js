@@ -5,6 +5,8 @@ import "./NavBar.css";
 import PopUp from "../PopUp/PopUp";
 import { Link } from "react-router-dom";
 import LogOut from "../Log/LogOut";
+import { currentUserName } from "../Log/LogIn";
+
 
 const NavBar = (props) => {
   const handleShow = () => setShow(true);
@@ -53,6 +55,9 @@ const NavBar = (props) => {
             <Link to="/admin">Admin</Link>
           </li>
         ) : <></>}
+        <li class="hiUser">
+          Hi {currentUserName}
+        </li>
         <li>
           <LogOut changedLogging={changedLogging} />
         </li>
@@ -62,3 +67,5 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
+
+
