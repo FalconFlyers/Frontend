@@ -3,17 +3,30 @@ import axios from "axios";
 import "./MyEvents.css";
 import Card from "react-bootstrap/Card";
 
-const apiUrl = `http://localhost:8080/api/v1/user/user001/events`;
+const apiUrl = `http://localhost:8080/api/v1/user/123abc/events`;
+const [post, setPost] = useState([]);
 const Fitness = () => {
-  const [post, setPost] = useState([]);
+  // const [post, setPost] = useState([]);
   useEffect(() => {
     axios.get(apiUrl).then((response) => {
        setPost(response.data);
 
        console.log(response.data);
-      //  console.log(post.type);
+      // console.log(post.type);
     });
   }, [setPost]);
+
+
+  //  handleClick = () => {
+    // useEffect(() => {
+    //    axios.delete("http://localhost:8080/api/v1/user/123abc/event/",{params: {id: post.event_id}}) .then(response => { 
+    //   setPost('');
+    //   console.log(response.data); }); 
+    // },[setPost])
+    // alert("You have cancelled  the event successfully!")
+  // };
+
+
   const myFit = post.map((post) => (
     <>
       <Card className="fitness">
@@ -33,11 +46,21 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary" onClick={()=>alert("You have cancelled  the event successfully!")}>Cancel</button>
+          <button variant="primary" onClick={()=>{
+            useEffect(() => {
+              axios.delete("http://localhost:8080/api/v1/user/123abc/event/",{params: {id: post.event_id}}) .then(response => { 
+             setPost('');
+             console.log(response.data); }); 
+           },[setPost])
+            alert("You have cancelled  the event successfully!")
+          }}>Cancel</button>
         </Card.Body>
       </Card>
     </>
   ));
+
+  //()=>
+
   return (
     <>
       <div className="text">
