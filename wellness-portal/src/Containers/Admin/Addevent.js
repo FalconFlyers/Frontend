@@ -15,16 +15,17 @@ const disablePastDate = () => {
 };
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setName] = useState(""); 
-  const [type, setType] = useState("");
-  const [zLink, setZlink] = useState("");
-  const [capacity, setCapacity] = useState();
-  const [instructor, setInstr] = useState("");
-  const [desc, setDesc] = useState("");
-  const [date, setDate] = useState("");
-  const [time,setTime] = useState("");
+  const [name, setName] = useState(""); //chg to setName
+  const [capacity,setCapacity]=useState();
+  const [instructor,setInstructor]=useState("");
+  const [zLink,setZlink]=useState("");
+  const [desc,setDesc]=useState("");
+  const [date,setDate]=useState("");
+  const [time,setTime]=useState("");
+  const [type,setType]=useState("");
   const [image_link,setImgLink]=useState("");
-
+  //create consts for all fields
+  //const
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
       setEvent(response.data);
@@ -100,6 +101,7 @@ function Addevent() {
                 setType(e.target.value);
               }}
               value={type}>
+                <option value="">Not selected</option>
                 <option value="yoga">Yoga</option>
                 <option value="therapy">Therapy</option>
                 <option value="mindfulness">MindFulness</option>
@@ -107,7 +109,6 @@ function Addevent() {
                 <option value="meditation">Meditation</option>
               </Form.Control>
             </Col>
-            <Col sm={2}></Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
@@ -139,7 +140,7 @@ function Addevent() {
             <Col sm={2}>
               <Form.Control type="text" placeholder="Instructor Name" 
               onChange={(e) => {
-                setInstr(e.target.value);
+                setInstructor(e.target.value);
               }}
               value={instructor}/>
             </Col>

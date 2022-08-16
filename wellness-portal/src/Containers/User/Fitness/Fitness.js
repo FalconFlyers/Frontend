@@ -1,31 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Fitness.css";
 import Card from "react-bootstrap/Card";
 import fit from "./FitnessList";
 
+
+const apiUrl = `http://localhost:8080/api/v1/events/type/fitness`
 const Fitness = () => {
-  const myFit = fit.map((fit) => (
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    axios.get(apiUrl).then((response) => {
+      setPost(response.data);
+    })
+  }, [setPost]);
+  // const myYoga = yoga.map((yoga) => (
+    const myFit = post.map((post) => (
     <>
       <Card className="fitness">
         <card-img>
-          <Card.Img variant="top" src={fit.photo} />
+          <Card.Img variant="top" src={post.image} />
         </card-img>
         <Card.Body>
           <Card.Title>
-            <h4>{fit.title}</h4>
+            <h4>{post.name}</h4>
           </Card.Title>
           <Card.Text>
             <b>Description: </b>
-            {fit.desc}
+            {post.desc}
           </Card.Text>
           <Card.Text>
             <b>Bookings Available: </b>
-            {fit.Book_Avai}
+            {post.capacity}
+            {/* <br></br>
+            Date: {yoga.date}
             <br></br>
-            Date: {fit.date}
-            <br></br>
-            Time: {fit.time}
+            Time: {yoga.time} */}
           </Card.Text>
+
           <button variant="primary">Book Now</button>
         </Card.Body>
       </Card>

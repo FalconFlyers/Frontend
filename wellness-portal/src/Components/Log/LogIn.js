@@ -6,7 +6,7 @@ import "./LogIn.css";
 import GoogleLogo from "../../Logos/GoogleLogo.png";
 const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
-
+let currentUser = '';
 function Login(props) {
   const adminEmail = "falconflyers01@gmail.com";
   
@@ -23,6 +23,7 @@ function Login(props) {
   const onSuccess = (res) => {
     console.log("Login Success: currentUser:", res.profileObj);
     console.log("Login Success: currentUser:", res.profileObj.email);
+    currentUser = res.profileObj.email;
     if(adminEmail === res.profileObj.email){
       props.setFlagAdmin(true);
     }
@@ -58,3 +59,4 @@ function Login(props) {
 }
 
 export default Login;
+export {currentUser};

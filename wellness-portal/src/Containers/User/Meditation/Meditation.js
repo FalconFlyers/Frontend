@@ -1,33 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Meditation.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import medi from "./MeditationList";
 
+const apiUrl = `http://localhost:8080/api/v1/events/type/meditation`
 const Meditation = () => {
-  const myMedi = medi.map((medi) => (
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    axios.get(apiUrl).then((response) => {
+      setPost(response.data);
+    })
+  }, [setPost]);
+  // const myYoga = yoga.map((yoga) => (
+    const myMedi = post.map((post) => (
     <>
       <Card className="medi">
         <card-img>
-          <Card.Img variant="top" src={medi.photo} />
+          <Card.Img variant="top" src={post.image} />
         </card-img>
         <Card.Body>
           <Card.Title>
-            <h4>{medi.title}</h4>
+            <h4>{post.name}</h4>
           </Card.Title>
           <Card.Text>
-            <b>Description:</b>
-            {medi.desc}
+            <b>Description: </b>
+            {post.desc}
           </Card.Text>
           <Card.Text>
-            <b>Bookings Available:</b>
-            {medi.Book_Avai}
+            <b>Bookings Available: </b>
+            {post.capacity}
+            {/* <br></br>
+            Date: {yoga.date}
             <br></br>
-            Date:{medi.date}
-            <br></br>
-            Time:{medi.time}
+            Time: {yoga.time} */}
           </Card.Text>
-          <Button variant="primary">Book Now</Button>
+
+          <button variant="primary">Book Now</button>
         </Card.Body>
       </Card>
     </>

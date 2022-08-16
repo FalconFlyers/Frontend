@@ -3,14 +3,23 @@ import axios from "axios";
 import "./MyEvents.css";
 import Card from "react-bootstrap/Card";
 import fit from "./MyEventsList";
+import { currentUser } from "../Log/LogIn";
 
-const apiUrl = `http://localhost:8080/api/v1/user/abc@gmail.com/events`;
+const username =""+ currentUser;
+//const url = new URL(`localhost:8080/api/v1/user/?x=${username}/events`);
+console.log("checking before fetching1",currentUser);
+
+//url.searchParams.append('x', currentUser);
+
 const Fitness = () => {
+  const apiUrl = `http://localhost:8080/api/v1/user/${currentUser}`+`/events`;
+  console.log("checking before fetching2",currentUser);
+  console.log("apiUrl: ", apiUrl);
   const [post, setPost] = useState([]);
   useEffect(() => {
     axios.get(apiUrl).then((response) => {
        setPost(response.data);
-
+       console.log("after fetching",username);
        console.log(response.data);
       //  console.log(post.type);
     });
