@@ -15,17 +15,17 @@ const disablePastDate = () => {
 };
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setEve] = useState(""); //chg to setName
-  const[type,setType]=useState("");
-  const [capacity,setCapacity]=useState([]);
-  const [instructor,setInstructor]=useState([]);
-  const [zlink,setZlink]=useState([]);
-  const [desc,setDesc]=useState([]);
-  const [date,setDate]=useState([]);
-  const [time,setTime]=useState([]);
-  const [image,setImage]=useState("");
-  //create consts for all fields
-  //const
+  const [name, setName] = useState(""); 
+  const [type, setType] = useState("");
+  const [zLink, setZlink] = useState("");
+  const [capacity, setCapacity] = useState();
+  const [instructor, setInstructor] = useState("");
+  const [desc, setDesc] = useState("");
+  const [date, setDate] = useState("");
+  const [time,setTime] = useState("");
+  const [image,setImage] = useState("");
+
+
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
       setEvent(response.data);
@@ -35,10 +35,8 @@ function Addevent() {
   function createEvent() {
     axios
       .post(addEventUrl, {
-        name,
-        capacity,
-        type
-        //all data to be sent
+        name,type,zLink,capacity,instructor,desc,date,time
+      
       })
       .then((response) => {
         setEvent(response.data);
@@ -49,7 +47,6 @@ function Addevent() {
     createEvent();
     //for checking
     setEvent('');
-    setEve('');
     setCapacity('');
     setInstructor('');
     setZlink('');
@@ -85,7 +82,7 @@ function Addevent() {
                 type="text"
                 placeholder="Event Name"
                 onChange={(e) => {
-                  setEve(e.target.value);
+                  setName(e.target.value);
                 }}
                 value={name}
               />
@@ -95,10 +92,11 @@ function Addevent() {
               Date:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="date"  min={disablePastDate()}   onChange={(e) => {
-                  setDate(e.target.value);
-                }}
-                value={date}/>
+              <Form.Control type="date"  min={disablePastDate()}
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
+              value={date}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -135,17 +133,19 @@ function Addevent() {
               Capacity:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="Number" min="0" placeholder="Capacity"   onChange={(e) => {
-                  setCapacity(e.target.value);
-                }}
-                value={capacity} />
+              <Form.Control type="Number" min="0" placeholder="Capacity"
+              onChange={(e) => {
+                setCapacity(e.target.value);
+              } }
+              value={capacity}/>
             </Col>
             <Col sm={2}></Col>
             <Form.Label column sm={2}>
               Time:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="time" placeholder="Time"   onChange={(e) => {
+              <Form.Control type="time" placeholder="Time" 
+                  onChange={(e) => {
                   setTime(e.target.value);
                 }}
                 value={time}/>
@@ -176,7 +176,7 @@ function Addevent() {
                 onChange={(e) => {
                   setZlink(e.target.value);
                 }}
-                value={zlink}
+                value={zLink}
               />
             </Col>
             <Col sm={1}></Col>
