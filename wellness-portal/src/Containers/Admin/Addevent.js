@@ -15,17 +15,17 @@ const disablePastDate = () => {
 };
 function Addevent() {
   const [event, setEvent] = useState([]);
-  const [name, setName] = useState(""); 
-  const [type, setType] = useState("");
-  const [zLink, setZlink] = useState("");
-  const [capacity, setCapacity] = useState();
-  const [instructor, setInstructor] = useState("");
-  const [desc, setDesc] = useState("");
-  const [date, setDate] = useState("");
-  const [time,setTime] = useState("");
-  const [image,setImage] = useState("");
-
-
+  const [name, setName] = useState(""); //chg to setName
+  const [capacity,setCapacity]=useState();
+  const [instructor,setInstructor]=useState("");
+  const [zLink,setZlink]=useState("");
+  const [desc,setDesc]=useState("");
+  const [date,setDate]=useState("");
+  const [time,setTime]=useState("");
+  const [type,setType]=useState("");
+  const [image_link,setImgLink]=useState("");
+  //create consts for all fields
+  //const
   useEffect(() => {
     axios.get(addEventUrl).then((response) => {
       setEvent(response.data);
@@ -35,8 +35,7 @@ function Addevent() {
   function createEvent() {
     axios
       .post(addEventUrl, {
-        name,type,zLink,capacity,instructor,desc,date,time
-      
+        name,type,zLink,capacity,instructor,desc,date,time, image_link
       })
       .then((response) => {
         setEvent(response.data);
@@ -46,18 +45,11 @@ function Addevent() {
     e.preventDefault();
     createEvent();
     //for checking
-    setEvent('');
-    setCapacity('');
-    setInstructor('');
-    setZlink('');
-    setDesc('');
-    setDate('');
-    setTime('');
-    setImage('');
-    alert("You have added the event successfully!");
     console.log(name);
+    console.log(time);
     console.log(type);
-    console.log(capacity);
+    console.log(instructor);
+    console.log(zLink);
   };
   
   return (
@@ -104,28 +96,18 @@ function Addevent() {
               Event Type:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control as="select" onChange={(e)=>{
+              <Form.Control as="select"  
+              onChange={(e) => {
                 setType(e.target.value);
-              }} value={type}>
-                <option >Not selected</option>
+              }}
+              value={type}>
+                <option value="">Not selected</option>
                 <option value="yoga">Yoga</option>
-                <option>Therapy</option>
-                <option>MindFullness</option>
+                <option value="therapy">Therapy</option>
+                <option value="mindfulness">MindFulness</option>
                 <option value="fitness">Fitness</option>
-                <option>Meditation</option>
+                <option value="meditation">Meditation</option>
               </Form.Control>
-            </Col>
-            <Col sm={2}></Col>
-            <Form.Label column sm={2}>
-                Image URL:
-            </Form.Label>
-            <Col sm={3}>
-              <Form.Control type="text"
-                placeholder="Image URL"
-                onChange={(e) => {
-                  setImage(e.target.value);
-                }}
-                value={image}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
@@ -156,13 +138,23 @@ function Addevent() {
               Instructor:
             </Form.Label>
             <Col sm={2}>
-              <Form.Control type="text" placeholder="Instructor Name"   onChange={(e) => {
-                  setInstructor(e.target.value);
-                }}
-                value={instructor}/>
+              <Form.Control type="text" placeholder="Instructor Name" 
+              onChange={(e) => {
+                setInstructor(e.target.value);
+              }}
+              value={instructor}/>
             </Col>
             <Col sm={2}></Col>
-           
+            <Form.Label column sm={2}>
+              Image Link:
+            </Form.Label>
+            <Col sm={2}>
+              <Form.Control type="text" placeholder="Image Link" 
+              onChange={(e) => {
+                setImgLink(e.target.value);
+              }}
+              value={image_link}/>
+            </Col>
           </Form.Group>
           <Form.Group as={Row} className="form-group">
             <Form.Label column sm={2}>
@@ -181,7 +173,7 @@ function Addevent() {
             </Col>
             <Col sm={1}></Col>
             <Form.Label column sm={2}>
-              Event Discription:
+              Event Description:
             </Form.Label>
             <Col sm={3}>
               <Form.Control
