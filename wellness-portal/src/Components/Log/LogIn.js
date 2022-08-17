@@ -4,6 +4,8 @@ import { refreshTokenSetup } from "../../utils/refreshToken";
 import { gapi } from "gapi-script";
 import "./LogIn.css";
 import GoogleLogo from "../../Logos/GoogleLogo.png";
+import swal from 'sweetalert';
+
 const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
 let currentUser="";
@@ -33,8 +35,11 @@ function Login(props) {
     refreshTokenSetup(res);
     props.handleClose();
     props.changedLogging();
-    alert(`Hello ${currentUserName},
-You're successfully logged in!`);
+    swal({
+      title: `Hello ${currentUserName} !!`,
+      text: "You have successfully logged in!",
+      icon: "success"
+    })
   };
 
   const onFailure = (res) => {

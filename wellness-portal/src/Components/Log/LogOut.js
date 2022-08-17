@@ -1,6 +1,7 @@
 import React from "react";
 import { GoogleLogout } from "react-google-login";
 import "./LogOut.css";
+import swal from "sweetalert";
 
 const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
@@ -9,8 +10,11 @@ function Logout(props) {
   const onSuccess = () => {
     console.log("Logout made successfully");
     props.changedLogging();
-    alert("You're successfully logged out");
-  };
+    swal({
+      title: "Log Out",
+      text: "You have successfully logged out of WellnessPortal",
+      icon: "info"
+    })  };
 
   return (
     <div className="logout">
@@ -29,3 +33,5 @@ function Logout(props) {
 }
 
 export default Logout;
+
+
