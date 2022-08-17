@@ -24,12 +24,22 @@ const Fitness = () => {
       //  console.log(post.type);
     });
   }, [setPost]);
+  function cancelEvent(id) {
+    console.log(id);
+    axios.delete(`http://localhost:8080/api/v1/user/${currentUser}/event/${id}`).then(() => {
+      console.log("event canceled!");
+      alert("event canceled");
+      // window.location.reload(true);
+      const posts = posts.filter(item => item.id!== id);
+      setPost(posts);
+    })
+  }
   const myFit = post.map((post) => (
     <>
       <Card className="fitness">
-        {/* <card-img>
-          <Card.Img variant="top" src={fit.photo} />
-        </card-img> */}
+        <card-img>
+          <Card.Img variant="top" src={post.image_link} />
+        </card-img>
         <Card.Body>
           <Card.Title>
             <h4>{post.name}</h4>
@@ -43,7 +53,7 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary">Cancel</button>
+          <button variant="primary" onClick={()=>cancelEvent(post.id)}>Cancel</button>
         </Card.Body>
       </Card>
     </>

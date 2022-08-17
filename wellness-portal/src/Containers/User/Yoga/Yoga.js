@@ -5,9 +5,11 @@ import Card from "react-bootstrap/Card";
 import yoga from "./Yoga-list";
 import Button from "react-bootstrap/Button";
 import { currentUser } from "../../../Components/Log/LogIn";
+import swal from 'sweetalert';
 
 //const apiUrl = `http://localhost:8080/api/v1/events/all`
 const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
+const value = false;
 //const bookEventApi = `http://localhost:8080/api/v1/users/abc@gmail.com/bookevent/1`
 
 // useEffect(() => {
@@ -17,22 +19,33 @@ const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
 // }, []);
 
 const Yoga = () => {
-  const [value, setValue] = useState(false);
+   //const [value, setValue] = useState(-1);
   // const changedValue = () => {
   //   setValue(!value);
   // };
+  const [book, setBook] = useState([]);
   function handleClick(id){
     console.log(id);
+    axios.get(`http://localhost:8080/api/v1/user/${currentUser}/event/${id}`).then((response) => {
+    setBook(response.data);
+    })
+    book? swal({
+      title: "Booked!",
+      text: "You have already booked this Event!",
+      icon: "warning"
+    }):
       axios.put(`http://localhost:8080/api/v1/users/${currentUser}`+`/bookevent/${id}`).then(() => {
-        console.log("event booked!");
-        console.log(value);
-        value? setValue(false):setValue(true);
+      console.log("event booked!");
+      console.log(book);
+        // value? setValue(false):setValue(true);
        // changedValue();
 
         // const posts = posts.filter(item => item.id!== id);
         // setPostAllEvents(posts);
-      }
-    )
+      })
+      
+      //value = book;
+    
   }
   const [post, setPost] = useState([]);
   useEffect(() => {
@@ -40,6 +53,11 @@ const Yoga = () => {
       setPost(response.data);
     })
   }, [setPost]);
+
+
+  // useEffect(() => {
+    
+  // }, [setBook]);
   // const myYoga = yoga.map((yoga) => (
     const myYoga = post.map((post) => (
     <>
@@ -63,7 +81,7 @@ const Yoga = () => {
             <br></br>
             Time:{post.time}
           </Card.Text>
-          <Button variant="primary" disabled={value} onClick = {() => handleClick(post.id)}>Book Now</Button>
+          <Button variant="primary" onClick = {() => handleClick(post.id)}>Book Now</Button>
         </Card.Body>
       </Card>
       {/* {changedValue()} */}
