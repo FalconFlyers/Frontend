@@ -6,6 +6,7 @@ import yoga from "./Yoga-list";
 import Button from "react-bootstrap/Button";
 import { currentUser } from "../../../Components/Log/LogIn";
 import swal from 'sweetalert';
+import ButtonElement from "./ButtonElement";
 
 //const apiUrl = `http://localhost:8080/api/v1/events/all`
 const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
@@ -81,7 +82,8 @@ const Yoga = () => {
             <br></br>
             Time:{post.time}
           </Card.Text>
-          <Button variant="primary" onClick = {() => handleClick(post.id)}>Book Now</Button>
+          <ButtonElement onClick="onClick" id={post.id}></ButtonElement>
+          {/* <Button variant="primary" onClick = {() => handleClick(post.id)}>Book Now</Button> */}
         </Card.Body>
       </Card>
       {/* {changedValue()} */}
