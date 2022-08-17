@@ -2,8 +2,8 @@
     margin-bottom: 10px;
 }
 .header img{
-    max-width: 100%;
+    width: 50%;
 }
-.car{
-    text-shadow: 2px 2px 2px black;
+.shade .innerText{
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }

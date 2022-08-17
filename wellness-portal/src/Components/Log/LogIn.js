@@ -38,7 +38,10 @@ function Login(props) {
     swal({
       title: `Hello ${currentUserName} !!`,
       text: "You have successfully logged in!",
-      icon: "success"
+      icon: "success",
+      buttons:{
+        Ok: {text: "Great !"}
+      }
     })
   };
 

@@ -16,6 +16,10 @@
     position: relative;
 }
 
+.swal-button{
+    background: #1C3879 !important;
+}
+
 .login .icon {
     max-width: 7%;
     margin: 2%;

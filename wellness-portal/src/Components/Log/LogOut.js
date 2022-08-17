@@ -13,8 +13,11 @@ function Logout(props) {
     swal({
       title: "Log Out",
       text: "You have successfully logged out of WellnessPortal",
-      icon: "info"
-    })  };
+      icon: "info",
+      buttons:{
+        Ok: {text: "See You Next Time !"}}
+    })  
+  };
 
   return (
     <div className="logout">
