@@ -25,11 +25,11 @@ useEffect(() => {
   const UpcomingEvents = post.map((event)=>(
     <Carousel.Item>
         <img src={event.image_link} alt="First slide" />
-        <Carousel.Caption>
-        <h3 classname="shade">{event.name}</h3>
-        <h5 classname="shade">{event.date}</h5>
-        <h5 classname="shade">{event.time}</h5>
-        <p classname="shade">{event.desc}</p>        
+        <Carousel.Caption classname="shade">
+        <h3>{event.name}</h3>
+        <h5>{event.date}</h5>
+        <h5>{event.time}</h5>
+        <p>{event.desc}</p>        
         </Carousel.Caption>
         </Carousel.Item>
   ))

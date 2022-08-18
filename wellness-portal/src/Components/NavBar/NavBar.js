@@ -18,7 +18,9 @@ const NavBar = (props) => {
   return !props.isLogged ? (
     <Nav>
       <logo>
+        <Link to="/home">
         <img src={process.env.PUBLIC_URL + "images/BWY.png"} />
+        </Link>
       </logo>
       <ul class="topnav">
         <li>
@@ -41,7 +43,9 @@ const NavBar = (props) => {
   ) : (
     <Nav>
       <logo>
+      <Link to="/home">
         <img src={process.env.PUBLIC_URL + "images/BWY.png"} />
+        </Link>
       </logo>
       <ul class="topnav">
         <li>

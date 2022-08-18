@@ -1,9 +1,12 @@
 .header .carousel{
     margin-bottom: 10px;
+    max-height: 10px;
 }
 .header img{
-    width: 50%;
+    width: 100%;
+    /* max-height: 500px; */
+    object-position: top;
 }
-.shade .innerText{
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+.carousel-caption{
+    text-shadow: 2px 2px rgb(0, 0, 0);
 }
