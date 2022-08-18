@@ -17,9 +17,9 @@ const Ther = () => {
   const mytherapy = therapy.map((therapy) => (
     <>
        <Card className="therapy"> 
-         {/* <card-img>
-          <Card.Img variant="top" src={therapy.photo} />
-        </card-img>   */}
+         <card-img>
+          <Card.Img variant="top" src={therapy.image_link} />
+        </card-img>  
         <Card.Body>
           <Card.Title>
             <h4>{therapy.title}</h4>

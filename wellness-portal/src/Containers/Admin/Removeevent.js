@@ -29,7 +29,8 @@ useEffect(() => {
         <>
         <Container className="cont">
         <Row>
-          <Col>{event.name}- {event.type} {event.instructor}</Col>
+          <Col>{event.name}- {event.type} </Col>
+          <Col>{event.instructor}</Col>
           <Col>{event.desc}</Col>
           <Col>{event.date}/{event.time}</Col>
           <Col>

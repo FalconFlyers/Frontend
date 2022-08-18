@@ -5,41 +5,23 @@ import Card from "react-bootstrap/Card";
 import yoga from "./Yoga-list";
 import Button from "react-bootstrap/Button";
 import { currentUser } from "../../../Components/Log/LogIn";
+import swal from 'sweetalert';
+import ButtonElement from "./ButtonElement";
 
 //const apiUrl = `http://localhost:8080/api/v1/events/all`
 const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
-//const bookEventApi = `http://localhost:8080/api/v1/users/abc@gmail.com/bookevent/1`
-
-// useEffect(() => {
-//   axios.get(addEventUrl).then((response) => {
-//     setEvent(response.data);
-//   });
-// }, []);
-
 const Yoga = () => {
-  const [value, setValue] = useState(false);
-  // const changedValue = () => {
-  //   setValue(!value);
-  // };
-  function handleClick(id){
-    console.log(id);
-      axios.put(`http://localhost:8080/api/v1/users/${currentUser}`+`/bookevent/${id}`).then(() => {
-        console.log("event booked!");
-        console.log(value);
-        value? setValue(false):setValue(true);
-       // changedValue();
-
-        // const posts = posts.filter(item => item.id!== id);
-        // setPostAllEvents(posts);
-      }
-    )
-  }
   const [post, setPost] = useState([]);
   useEffect(() => {
     axios.get(apiUrl).then((response) => {
       setPost(response.data);
     })
   }, [setPost]);
+
+
+  // useEffect(() => {
+    
+  // }, [setBook]);
   // const myYoga = yoga.map((yoga) => (
     const myYoga = post.map((post) => (
     <>
@@ -63,7 +45,8 @@ const Yoga = () => {
             <br></br>
             Time:{post.time}
           </Card.Text>
-          <Button variant="primary" disabled={value} onClick = {() => handleClick(post.id)}>Book Now</Button>
+          <ButtonElement onClick="onClick" id={post.id}></ButtonElement>
+          {/* <Button variant="primary" onClick = {() => handleClick(post.id)}>Book Now</Button> */}
         </Card.Body>
       </Card>
       {/* {changedValue()} */}

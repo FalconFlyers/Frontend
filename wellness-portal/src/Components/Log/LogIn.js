@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect,useState} from "react";
 import { GoogleLogin } from "react-google-login";
 import { refreshTokenSetup } from "../../utils/refreshToken";
 import { gapi } from "gapi-script";
@@ -6,13 +6,15 @@ import "./LogIn.css";
 import GoogleLogo from "../../Logos/GoogleLogo.png";
 import swal from 'sweetalert';
 
+
 const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
+  
 let currentUser="";
 let currentUserName="";
 function Login(props) {
   const adminEmail = "falconflyers01@gmail.com";
-  
+  // const [user2, setUsers] = useState()
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -23,15 +25,25 @@ function Login(props) {
 
     gapi.load("client:auth2", start);
   }, []);
+
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("user2");
+  //   if (loggedInUser) {
+  //     const foundUser = JSON.parse(loggedInUser);
+  //     setUsers(foundUser);
+  //   }
+  // }, []);
   const onSuccess = (res) => {
     console.log("Login Success: currentUser:", res.profileObj);
     console.log("Login Success: currentUser:", res.profileObj.email);
-    currentUser=res.profileObj.email;
     currentUserName=res.profileObj.name;
-    console.log("Just tryna show username:", currentUserName)
+    currentUser=res.profileObj.email;
     if(adminEmail === res.profileObj.email){
       props.setFlagAdmin(true);
     }
+  // localStorage.setItem('user2', res.profileObj)
+
+
     refreshTokenSetup(res);
     props.handleClose();
     props.changedLogging();
@@ -71,5 +83,5 @@ function Login(props) {
 }
 
 export default Login;
-export{ currentUser };
-export{ currentUserName };
+export {currentUser};
+export{currentUserName};

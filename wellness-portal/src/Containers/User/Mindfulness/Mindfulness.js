@@ -17,9 +17,9 @@ const Mindfulness = () => {
   const myMind = mind.map((mind) => (
     <>
       <Card className="mind">
-        {/* <card-img>
-          <Card.Img variant="top" src={mind.photo} />
-        </card-img> */}
+        <card-img>
+          <Card.Img variant="top" src={mind.image_link} />
+        </card-img>
         <Card.Body>
           <Card.Title>
             <h4>{mind.title}</h4>

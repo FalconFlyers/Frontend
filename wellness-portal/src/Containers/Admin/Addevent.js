@@ -50,6 +50,7 @@ function Addevent() {
     console.log(type);
     console.log(instructor);
     console.log(zLink);
+    // window.location.replace("http://localhost:3000/admin")
   };
   
   return (

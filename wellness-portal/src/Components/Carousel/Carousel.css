@@ -1,9 +1,12 @@
 .header .carousel{
     margin-bottom: 10px;
-    max-height: 10px;
 }
 .header img{
-    width: 100%;
+    /* width: 100%; */
+    width: 1688px;
+    height: 450px;
+    object-fit: cover;
+    object-position: 50% 20%;
     /* max-height: 500px; */
     object-position: top;
 }
