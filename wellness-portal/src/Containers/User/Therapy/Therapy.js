@@ -2,14 +2,24 @@ import React from "react";
 import "./Therapy.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import ther from "./TherapyList";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
+const apiUrl = `http://localhost:8080/api/v1/events/type/Therapy`
 const Therapy = () => {
+  const [ther, setTher] = useState([]);
+  useEffect(() => {
+    axios.get(apiUrl).then((response) => {
+      setTher(response.data);
+    })
+  }, [setTher]);
+
+
   const myTher = ther.map((ther) => (
     <>
       <Card className="therapy">
         <card-img>
-          <Card.Img variant="top" src={ther.photo} />
+          <Card.Img variant="top" src={ther.img_Link} />
         </card-img>
         <Card.Body>
           <Card.Title>
