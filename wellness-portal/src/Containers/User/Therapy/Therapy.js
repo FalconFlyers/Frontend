@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const apiUrl = `http://localhost:8080/api/v1/events/type/Therapy`
+const apiUrl = `http://localhost:8080/api/v1/events/type/therapy`
 const Therapy = () => {
   const [ther, setTher] = useState([]);
   useEffect(() => {
@@ -19,11 +19,11 @@ const Therapy = () => {
     <>
       <Card className="therapy">
         <card-img>
-          <Card.Img variant="top" src={ther.img_Link} />
+          <Card.Img variant="top" src={ther.image_link} />
         </card-img>
         <Card.Body>
           <Card.Title>
-            <h4>{ther.title}</h4>
+            <h4>{ther.name}</h4>
           </Card.Title>
           <Card.Text>
             <b>Description:</b>

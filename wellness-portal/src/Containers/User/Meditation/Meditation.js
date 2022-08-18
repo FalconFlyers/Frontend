@@ -18,7 +18,7 @@ const Meditation = () => {
     <>
       <Card className="medi">
         <card-img>
-          <Card.Img variant="top" src={post.image} />
+          <Card.Img variant="top" src={post.image_link} />
         </card-img>
         <Card.Body>
           <Card.Title>
@@ -31,10 +31,10 @@ const Meditation = () => {
           <Card.Text>
             <b>Bookings Available: </b>
             {post.capacity}
-            {/* <br></br>
-            Date: {yoga.date}
             <br></br>
-            Time: {yoga.time} */}
+            Date: {post.date}
+            <br></br>
+            Time: {post.time} 
           </Card.Text>
 
           <button variant="primary">Book Now</button>

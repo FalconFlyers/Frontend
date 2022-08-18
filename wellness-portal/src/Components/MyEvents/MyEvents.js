@@ -4,6 +4,7 @@ import "./MyEvents.css";
 import Card from "react-bootstrap/Card";
 import fit from "./MyEventsList";
 import { currentUser } from "../Log/LogIn";
+import swal from "sweetalert";
 
 const username =""+ currentUser;
 //const url = new URL(`localhost:8080/api/v1/user/?x=${username}/events`);
@@ -28,7 +29,7 @@ const Fitness = () => {
     console.log(id);
     axios.delete(`http://localhost:8080/api/v1/user/${currentUser}/event/${id}`).then(() => {
       console.log("event canceled!");
-      alert("event canceled");
+      swal({title : "Event Canceled!"});
       // window.location.reload(true);
       const posts = posts.filter(item => item.id!== id);
       setPost(posts);

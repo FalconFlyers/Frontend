@@ -4,9 +4,12 @@ import { refreshTokenSetup } from "../../utils/refreshToken";
 import { gapi } from "gapi-script";
 import "./LogIn.css";
 import GoogleLogo from "../../Logos/GoogleLogo.png";
+import swal from "sweetalert";
+
 const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
 let currentUser = '';
+let currentUserName =" ";
 function Login(props) {
   const adminEmail = "falconflyers01@gmail.com";
   
@@ -24,13 +27,18 @@ function Login(props) {
     console.log("Login Success: currentUser:", res.profileObj);
     console.log("Login Success: currentUser:", res.profileObj.email);
     currentUser = res.profileObj.email;
+    currentUserName = res.profileObj.name;
     if(adminEmail === res.profileObj.email){
       props.setFlagAdmin(true);
     }
     refreshTokenSetup(res);
     props.handleClose();
     props.changedLogging();
-    alert("You're successfully logged in");
+    swal({
+      title: `Hello ${currentUserName} !!`,
+      text: "You have successfully logged in!",
+      icon: "success"
+    });
   };
 
   const onFailure = (res) => {

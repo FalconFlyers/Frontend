@@ -10,7 +10,7 @@
 .mind.card-img{
     max-width: 450px;
 }
-.mind.card-body {
+.mind .card-body {
     display: flex;
     flex-direction: column;
     align-items: center;

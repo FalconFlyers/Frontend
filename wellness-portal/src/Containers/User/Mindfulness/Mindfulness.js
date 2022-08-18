@@ -20,7 +20,7 @@ const Mindfulness = () => {
     <>
       <Card className="mind">
         <card-img>
-          <Card.Img variant="top" src={mind.img_Link} />
+          <Card.Img variant="top" src={mind.image_link} />
         </card-img>
         <Card.Body>
           <Card.Title>
