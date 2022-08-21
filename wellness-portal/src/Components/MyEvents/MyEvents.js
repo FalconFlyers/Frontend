@@ -12,6 +12,7 @@ console.log("checking before fetching1",currentUser);
 
 //url.searchParams.append('x', currentUser);
 
+
 const Fitness = () => {
   const apiUrl = `http://localhost:8080/api/v1/user/${currentUser}`+`/events`;
   console.log("checking before fetching2",currentUser);
@@ -22,9 +23,10 @@ const Fitness = () => {
        setPost(response.data);
        console.log("after fetching",username);
        console.log(response.data);
-      //  console.log(post.type);
+      // console.log(post.type);
     });
   }, [setPost]);
+
   function cancelEvent(id,name) {
     // window.location.replace();
     console.log(id);
@@ -58,11 +60,21 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary" onClick={()=>cancelEvent(post.id,post.name)}>Cancel</button>
+          <button variant="primary" onClick={()=>{
+            useEffect(() => {
+              axios.delete("http://localhost:8080/api/v1/user/123abc/event/",{params: {id: post.event_id}}) .then(response => { 
+             setPost('');
+             console.log(response.data); }); 
+           },[setPost])
+            alert("You have cancelled  the event successfully!")
+          }}>Cancel</button>
         </Card.Body>
       </Card>
     </>
   ));
+
+  //()=>
+
   return (
     <>
       <div className="text">
