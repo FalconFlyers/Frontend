@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/therapy`
+
 const Ther = () => {
   const [therapy, setTherapy] = useState([]);
   useEffect(() => {
@@ -17,9 +18,9 @@ const Ther = () => {
   const mytherapy = therapy.map((therapy) => (
     <>
        <Card className="therapy"> 
-         {/* <card-img>
-          <Card.Img variant="top" src={therapy.photo} />
-        </card-img>   */}
+         <card-img>
+          <Card.Img variant="top" src={therapy.image_link} />
+        </card-img>  
         <Card.Body>
           <Card.Title>
             <h4>{therapy.title}</h4>

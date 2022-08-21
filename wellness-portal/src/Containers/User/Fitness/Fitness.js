@@ -17,7 +17,7 @@ const Fitness = () => {
     <>
       <Card className="fitness">
         <card-img>
-          <Card.Img variant="top" src={post.image} />
+          <Card.Img variant="top" src={post.image_link} />
         </card-img>
         <Card.Body>
           <Card.Title>
@@ -30,10 +30,10 @@ const Fitness = () => {
           <Card.Text>
             <b>Bookings Available: </b>
             {post.capacity}
-            {/* <br></br>
-            Date: {yoga.date}
+             <br></br>
+            Date: {post.date}
             <br></br>
-            Time: {yoga.time} */}
+            Time: {post.time} 
           </Card.Text>
 
           <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>

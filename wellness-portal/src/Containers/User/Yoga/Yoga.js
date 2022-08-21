@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Yoga.css";
 import Card from "react-bootstrap/Card";
+import yoga from "./Yoga-list";
+import Button from "react-bootstrap/Button";
+import { currentUser } from "../../../Components/Log/LogIn";
+import swal from 'sweetalert';
+import ButtonElement from "./ButtonElement";
 
 //const apiUrl = `http://localhost:8080/api/v1/events/all`
 const apiUrl = `http://localhost:8080/api/v1/events/type/yoga`
@@ -12,12 +17,17 @@ const Yoga = () => {
       setPost(response.data);
     })
   }, [setPost]);
+
+
+  // useEffect(() => {
+    
+  // }, [setBook]);
   // const myYoga = yoga.map((yoga) => (
     const myYoga = post.map((post) => (
     <>
       <Card className="yoga">
         <card-img>
-          <Card.Img variant="top" src={post.image} />
+          <Card.Img variant="top" src={post.image_link} />
         </card-img>
         <Card.Body>
           <Card.Title>
@@ -30,15 +40,16 @@ const Yoga = () => {
           <Card.Text>
             <b>Bookings Available: </b>
             {post.capacity}
-             <br></br>
-            Date: {post.date}
             <br></br>
-            Time: {post.time} 
+            Date:{post.date}
+            <br></br>
+            Time:{post.time}
           </Card.Text>
-
-          <button variant="primary"  onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>
+          <ButtonElement onClick="onClick" id={post.id}></ButtonElement>
+          {/* <Button variant="primary" onClick = {() => handleClick(post.id)}>Book Now</Button> */}
         </Card.Body>
       </Card>
+      {/* {changedValue()} */}
     </>
   ));
   return (
@@ -59,3 +70,4 @@ const Yoga = () => {
 };
 
 export default Yoga;
+

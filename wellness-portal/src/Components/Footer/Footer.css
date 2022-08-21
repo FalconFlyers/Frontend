@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.hiUser{
+  color: white;
+  font-weight: 500;
+}
+
 a.social {
   margin: 0 1rem;
   transition: transform 250ms;
