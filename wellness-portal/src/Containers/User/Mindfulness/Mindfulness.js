@@ -4,8 +4,6 @@ import axios from "axios";
 import "./Mindfulness.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/mindfulness`
 const Mindfulness = () => {

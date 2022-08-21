@@ -61,14 +61,7 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary" onClick={()=>{
-            useEffect(() => {
-              axios.delete("http://localhost:8080/api/v1/user/123abc/event/",{params: {id: post.event_id}}) .then(response => { 
-             setPost('');
-             console.log(response.data); }); 
-           },[setPost])
-            alert("You have cancelled  the event successfully!")
-          }}>Cancel</button>
+          <button variant="primary" onClick={cancelEvent}>Cancel</button>
         </Card.Body>
       </Card>
     </>
