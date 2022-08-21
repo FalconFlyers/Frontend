@@ -32,6 +32,7 @@ const Fitness = () => {
     console.log(id);
     axios.delete(`http://localhost:8080/api/v1/user/${currentUser}/event/${id}`).then(() => {
       console.log("event canceled!");
+
       swal({
         title: "Event Cancelled!",
         text: `Booking for ${name} has been cancelled!`,

@@ -29,10 +29,10 @@ const Meditation = () => {
           <Card.Text>
             <b>Bookings Available: </b>
             {post.capacity}
-            {/* <br></br>
-            Date: {yoga.date}
             <br></br>
-            Time: {yoga.time} */}
+            Date: {post.date}
+            <br></br>
+            Time: {post.time} 
           </Card.Text>
           <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>
         </Card.Body>

@@ -12,6 +12,7 @@ function Logout(props) {
     
     props.changedLogging();
     swal({
+
       title: "Log Out",
       text: "You have successfully logged out of WellnessPortal",
       icon: "info",
