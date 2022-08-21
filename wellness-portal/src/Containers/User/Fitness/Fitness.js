@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Fitness.css";
 import Card from "react-bootstrap/Card";
-import fit from "./FitnessList";
 
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/fitness`
@@ -37,7 +36,7 @@ const Fitness = () => {
             Time: {post.time} 
           </Card.Text>
 
-          <button variant="primary">Book Now</button>
+          <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>
         </Card.Body>
       </Card>
     </>

@@ -7,7 +7,7 @@
 .mind card-img{
     width: 50%;
 }
-.mind.card-img{
+.mind .card-img{
     max-width: 450px;
 }
 .mind .card-body {

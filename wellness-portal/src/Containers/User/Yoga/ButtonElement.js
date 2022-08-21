@@ -12,6 +12,12 @@ const ButtonElement = (props) => {
     })
   
   function handleClick(){
+    swal({
+      title: "Event Booked!!!",
+      text: `You have successfully reserved your position for the event.
+  Check your Home Page to see your Booked Events :)`,
+icon: "success"
+    })
     console.log(props.id);
     // axios.get(`http://localhost:8080/api/v1/user/${currentUser}/event/${props.id}`).then((response) => {
     // setBook(response.data);

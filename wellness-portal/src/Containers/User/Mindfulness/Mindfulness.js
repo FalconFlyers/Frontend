@@ -1,5 +1,6 @@
 import React from "react";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./Mindfulness.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -8,13 +9,13 @@ import axios from "axios";
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/mindfulness`
 const Mindfulness = () => {
-  const [mind, setMind] = useState([]);
+
+  const [mind, setmind] = useState([]);
   useEffect(() => {
     axios.get(apiUrl).then((response) => {
-      setMind(response.data);
+      setmind(response.data);
     })
-  }, [setMind]);
-
+  }, [setmind]);
 
   const myMind = mind.map((mind) => (
     <>
@@ -32,14 +33,14 @@ const Mindfulness = () => {
           </Card.Text>
           <Card.Text>
             <b>Bookings Available:</b>
-            {mind.Book_Avai}
+            {mind.capacity}
             <br></br>
             Date:{mind.date}
             <br></br>
             Time:{mind.time}
           </Card.Text>
 
-          <Button variant="primary">Book Now</Button>
+          <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button>
         </Card.Body>
       </Card>
     </>

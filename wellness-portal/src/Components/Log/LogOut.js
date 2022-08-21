@@ -9,12 +9,18 @@ const clientId =
 function Logout(props) {
   const onSuccess = () => {
     console.log("Logout made successfully");
+    
     props.changedLogging();
     swal({
-      title: `Loged Out`,
-      text: "You have logged Out!",
-  
-    });
+
+      title: "Log Out",
+      text: "You have successfully logged out of WellnessPortal",
+      icon: "info",
+      buttons:{
+        Ok: {text: "See You Next Time !"}}
+    }).then(function(){
+      window.location.replace("http://localhost:3000");
+    })
   };
 
   return (
@@ -34,3 +40,5 @@ function Logout(props) {
 }
 
 export default Logout;
+
+
