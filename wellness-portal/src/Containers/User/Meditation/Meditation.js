@@ -16,7 +16,7 @@ const Meditation = () => {
     <>
       <Card className="medi">
         <card-img>
-          <Card.Img variant="top" src={post.image} />
+          <Card.Img variant="top" src={post.image_link} />
         </card-img>
         <Card.Body>
           <Card.Title>

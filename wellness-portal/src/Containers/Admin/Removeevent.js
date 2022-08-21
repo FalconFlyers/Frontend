@@ -5,60 +5,55 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/Button";
 import "./Addevent.css";
+import {useState, useEffect} from "react"
+import axios from "axios";
+
+const apiUrl = `http://localhost:8080/api/v1/events/all`
 const Removeevent = () => {
-  return (
-    <>
-      <div className="header">
-        <Link className="l1" to="/admin">
-          Add Events
-        </Link>
-        <Link className="l1" to="/removeevent">
-          Remove Events
-        </Link>
-      </div>
-      <Container className="cont">
+const [postAllEvents, setPostAllEvents] = useState([]);
+useEffect(() => {
+   axios.get(apiUrl).then((response) => {
+     setPostAllEvents(response.data);
+   })
+ }, [setPostAllEvents]);
+
+  function deleteEvent(id) {
+    console.log(id);
+    axios.delete(`http://localhost:8080/api/v1/event/${id}`).then(() => {
+      console.log("post deleted!");
+      const posts = posts.filter(item => item.id!== id);
+      setPostAllEvents(posts);
+    })
+  }
+      const allEvents = postAllEvents.map((event) => (
+        <>
+        <Container className="cont">
         <Row>
-          <Col>Event Name-Type Instructor</Col>
-          <Col>Event description</Col>
-          <Col>Date/Time</Col>
+          <Col>{event.name}- {event.type} </Col>
+          <Col>{event.instructor}</Col>
+          <Col>{event.desc}</Col>
+          <Col>{event.date}/{event.time}</Col>
           <Col>
             {" "}
-            <Button type="submit">REMOVE EVENT</Button>
+            <Button type="submit" onClick = {() => deleteEvent(event.id)}>REMOVE EVENT</Button>
           </Col>
         </Row>
       </Container>
-      <Container className="cont">
-        <Row>
-          <Col>Event Name-Type Instructor</Col>
-          <Col>Event description</Col>
-          <Col>Date/Time</Col>
-          <Col>
-            <Button type="submit">REMOVE EVENT</Button>
-          </Col>
-        </Row>
-      </Container>
-      <Container className="cont">
-        <Row>
-          <Col>Event Name-Type Instructor</Col>
-          <Col>Event description</Col>
-          <Col>Date/Time</Col>
-          <Col>
-            <Button type="submit">REMOVE EVENT</Button>
-          </Col>
-        </Row>
-      </Container>
-      <Container className="cont">
-        <Row>
-          <Col>Event Name-Type Instructor</Col>
-          <Col>Event description</Col>
-          <Col>Date/Time</Col>
-          <Col>
-            <Button type="submit">REMOVE EVENT</Button>
-          </Col>
-        </Row>
-      </Container>
-    </>
+      </>
+      ));
+        return (
+          <>
+            <div className="header">
+              <Link className="l1" to="/admin">
+                Add Events
+              </Link>
+              <Link className="l1" to="/removeevent">
+                Remove Events
+              </Link>
+            </div>
+        {allEvents}
+      </>
   );
 };
-
 export default Removeevent;
+
