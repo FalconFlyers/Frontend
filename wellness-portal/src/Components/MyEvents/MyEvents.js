@@ -2,37 +2,51 @@ import React,{useState, useEffect} from "react";
 import axios from "axios";
 import "./MyEvents.css";
 import Card from "react-bootstrap/Card";
+import fit from "./MyEventsList";
+import { currentUser } from "../Log/LogIn";
+import swal from "sweetalert";
 
-const apiUrl = `http://localhost:8080/api/v1/user/123abc/events`;
-const [post, setPost] = useState([]);
+const username =""+ currentUser;
+//const url = new URL(`localhost:8080/api/v1/user/?x=${username}/events`);
+console.log("checking before fetching1",currentUser);
+
+//url.searchParams.append('x', currentUser);
+
+
 const Fitness = () => {
-  // const [post, setPost] = useState([]);
+  const apiUrl = `http://localhost:8080/api/v1/user/${currentUser}`+`/events`;
+  console.log("checking before fetching2",currentUser);
+  console.log("apiUrl: ", apiUrl);
+  const [post, setPost] = useState([]);
   useEffect(() => {
     axios.get(apiUrl).then((response) => {
        setPost(response.data);
-
+       console.log("after fetching",username);
        console.log(response.data);
       // console.log(post.type);
     });
   }, [setPost]);
 
-
-  //  handleClick = () => {
-    // useEffect(() => {
-    //    axios.delete("http://localhost:8080/api/v1/user/123abc/event/",{params: {id: post.event_id}}) .then(response => { 
-    //   setPost('');
-    //   console.log(response.data); }); 
-    // },[setPost])
-    // alert("You have cancelled  the event successfully!")
-  // };
-
-
+  function cancelEvent(id,name) {
+    // window.location.replace();
+    console.log(id);
+    axios.delete(`http://localhost:8080/api/v1/user/${currentUser}/event/${id}`).then(() => {
+      console.log("event canceled!");
+      swal({
+        title: "Event Cancelled!",
+        text: `Booking for ${name} has been cancelled!`,
+        icon: "warning"
+      })
+      const posts = posts.filter(item => item.id!== id);
+      setPost(posts);
+    })
+  }
   const myFit = post.map((post) => (
     <>
       <Card className="fitness">
-        {/* <card-img>
-          <Card.Img variant="top" src={fit.photo} />
-        </card-img> */}
+        <card-img>
+          <Card.Img variant="top" src={post.image_link} />
+        </card-img>
         <Card.Body>
           <Card.Title>
             <h4>{post.name}</h4>

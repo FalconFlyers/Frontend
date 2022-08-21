@@ -24,15 +24,15 @@ useEffect(() => {
 
   const UpcomingEvents = post.map((event)=>(
     <Carousel.Item>
-        <img src={pic4} alt="First slide" />
+        <img src={event.image_link} alt="Could not load image"/>
         <Carousel.Caption>
         <h3>{event.name}</h3>
+        <h5>{event.date}</h5>
+        <h5>{event.time}</h5>
         <p>{event.desc}</p>
         </Carousel.Caption>
         </Carousel.Item>
   ))
-
-
   return (
     <Carousel className="header">{UpcomingEvents}</Carousel>
   );
@@ -70,4 +70,8 @@ export default Header;
           <p className="car">Ready to burn some calories?? Lets make fit your upper body today!! </p>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel> */
+    </Carousel>
+  );
+  
+};
+*/

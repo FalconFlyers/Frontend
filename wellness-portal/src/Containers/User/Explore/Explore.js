@@ -56,14 +56,14 @@ const Explore = () => {
                 <h3>What is Wellness?</h3>
               </Card.Title>
               <div>
-              Wellness is an active process of becoming aware of and making choices towards a healthy and fulfilling life.  It is more than being free from.... 
+              Wellness is an active process of becoming aware of and making choices towards a healthy and fulfilling life.  It is more than being free from ... 
               {readMore && extraContent}
               {/* <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a> */}
               </div>
               <Card.Text className="cardtext">
               
               </Card.Text>
-              <Card.Link  className="yes"  href="https://www.globalwellnessday.org/about/what-is-wellness/">Read More</Card.Link>
+              <Card.Link  className="yes"  target="_blank" href="https://www.globalwellnessday.org/about/what-is-wellness/">Explore More</Card.Link>
             </Card.Body>
           </Card>
 
@@ -76,13 +76,13 @@ const Explore = () => {
                 <h4>Changing Trends in Indian Wellness</h4>
               </Card.Title>
               <div>
-              Introspection, understanding the body and its processes to the molecular level, and figuring out ways to implement 
+              Introspection, understanding the body and its processes to the molecular level, and figuring out ways to implement ...
               {readMore && extraContent}
-              <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+              {/* <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a> */}
               </div>
               <Card.Text className="cardtext">
                </Card.Text>
-              <Card.Link className="yes" href="https://www.thehealthsite.com/diseases-conditions/changing-trends-in-indian-wellness-from-mindfulness-to-nutrition-to-fitness-and-more-886326/">Explore More</Card.Link>
+              <Card.Link className="yes" target="_blank" href="https://www.thehealthsite.com/diseases-conditions/changing-trends-in-indian-wellness-from-mindfulness-to-nutrition-to-fitness-and-more-886326/">Explore More</Card.Link>
             </Card.Body>
           </Card>
 </Col>
@@ -94,12 +94,12 @@ const Explore = () => {
               </Card.Title>
               <Card.Text> 
                 <div>
-                  People often think about wellness in terms of physical health, exercise, weight management, etc., but 
+                  People often think about wellness in terms of physical health, exercise, weight management, etc., but ...
               {readMore && extraContent}
-              <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+              {/* <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a> */}
               </div>
               </Card.Text>
-              <Card.Link  className="yes"  href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5508938/">Explore More</Card.Link>
+              <Card.Link  className="yes" target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5508938/">Explore More</Card.Link>
             </Card.Body>
           </Card>
 </Col>
@@ -111,12 +111,12 @@ const Explore = () => {
               </Card.Title>
               <Card.Text>
                 <div>
-                While following an exercise routine is important to stay healthy and in shape, wearing the right clothes will, 
+                While following an exercise routine is important to stay healthy and in shape, wearing the right clothes will ...
                 {readMore && extraContent}
-                <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a>
+                {/* <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}>{linkName}</a> */}
                 </div>
               </Card.Text> 
-              <Card.Link   className="yes" href="https://www.readersdigest.in/health-wellness/story-3-thngs-you-must-have-during-a-workout-125596">Explore More</Card.Link>
+              <Card.Link   className="yes" target="_blank" href="https://www.readersdigest.in/health-wellness/story-3-thngs-you-must-have-during-a-workout-125596">Explore More</Card.Link>
             </Card.Body>
           </Card>
 </Col>
@@ -128,3 +128,4 @@ const Explore = () => {
 }
 
 export default Explore
+
