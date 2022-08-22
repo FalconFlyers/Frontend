@@ -4,7 +4,9 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import swal from "sweetalert";
 import axios from "axios";
+
 const addEventUrl = `http://localhost:8080/api/v1/events`;
 const disablePastDate = () => {
   const today = new Date();
@@ -51,6 +53,15 @@ function Addevent() {
     console.log(instructor);
     console.log(zLink);
     // window.location.replace("http://localhost:3000/admin")
+    swal({
+      title: `Hello Admin !!`,
+      text: "You have successfully added an event!",
+
+      icon: "success",
+      buttons:{
+        Ok: {text: "Great !"}
+      }
+    })
   };
   
   return (

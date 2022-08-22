@@ -1,41 +1,43 @@
 .social-container {
-  background: grey;
-  padding: 25px 50px;
-  text-align: center;
+  
+  background-color: #1C3879;
+ 
+ padding:2px 5px;
+ text-align: center;
+ 
 }
-
 .hiUser{
-  color: white;
-  font-weight: 500;
+ color: white;
+ font-weight: 500;
 }
 
 a.social {
-  margin: 0 1rem;
-  transition: transform 250ms;
-  display: inline-block;
+ margin: 0 1rem;
+ transition: transform 200ms;
+ display: inline-block;
 }
 
 a.social:hover {
-  transform: translateY(-2px);
+ transform: translateY(-2px);
 }
 
 a.youtube {
-  color: #eee;
+ color: #eee;
 }
 
 a.facebook {
-  color: #eee;
+ color: #eee;
 }
 
 a.twitter {
-  color: #eee;
+ color: #eee;
 }
 
 a.instagram {
-  color: #eee;
+ color: #eee;
 }
 .foot{
-  padding-top: 2%;
-   padding-bottom: 2%;
-   color: #eee;
+ padding-top: 1%;
+  padding-bottom: 1%;
+  color: #eee;
 }

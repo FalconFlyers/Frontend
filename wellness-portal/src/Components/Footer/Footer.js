@@ -10,7 +10,7 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="social-container">
-      <div style={{ paddingTop: "2%", color: "#00008B" }}>
+      <div style={{ paddingTop: "1%", color: "#00008B" }}>
         <a href="https://www.youtube.com" target="_blank" className="youtube social">
           <FontAwesomeIcon icon={faYoutube} size="2x" />
         </a>
