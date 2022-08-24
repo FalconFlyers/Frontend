@@ -1,9 +1,9 @@
 import React from "react";
 import "./Therapy.css";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ButtonElement from "../Yoga/ButtonElement";
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/therapy`
 
@@ -37,7 +37,8 @@ const Ther = () => {
             <br></br>
             Time:{therapy.time}
           </Card.Text>
-          <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button>
+          {/* <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button> */}
+          <ButtonElement onClick="onClick" id={therapy.id}></ButtonElement>
         </Card.Body>
       </Card>
     </>
