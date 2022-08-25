@@ -22,7 +22,7 @@ useEffect(() => {
     console.log(id);
     axios.delete(`http://localhost:8080/api/v1/event/${id}`).then(() => {
       console.log("post deleted!");
-      const posts = posts.filter(item => item.id!== id);
+      const posts = postAllEvents.filter(item => item.id!== id);
       setPostAllEvents(posts);
       
     })

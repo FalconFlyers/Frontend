@@ -6,6 +6,7 @@ import "./Mindfulness.css";
 import Card from "react-bootstrap/Card";
 import ButtonElement from "../Yoga/ButtonElement";
 
+
 const apiUrl = `http://localhost:8080/api/v1/events/type/mindfulness`
 const Mindfulness = () => {
 

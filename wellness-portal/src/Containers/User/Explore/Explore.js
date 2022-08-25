@@ -31,7 +31,7 @@ const Explore = () => {
         <h2 className='h2-mid-deco'><i>"What would you like to do today?"</i></h2>
         <Row>
      <Col><ReactPlayer url='https://www.youtube.com/watch?v=nvKYHTFrmMs' playing={true} muted={true}/>
-     <h4>Meditate at Your Desk</h4>
+     <h4 >Meditate at Your Desk</h4>
      </Col>
      <Col><ReactPlayer url='https://www.youtube.com/watch?v=F8_ME4VwTiw' playing={true} muted={true}/>
      <h4>Setup Your Desk Ergonomically</h4>
