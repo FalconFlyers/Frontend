@@ -29,3 +29,7 @@
     max-width: 7%;
     margin: 2%;
 }
+.modal-backdrop.show {
+  /* opacity: 0 ; */
+  background: rgba(0, 0, 1, 0.4);
+} 
