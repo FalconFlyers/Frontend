@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Meditation.css";
 import Card from "react-bootstrap/Card";
+import ButtonElement from "../Yoga/ButtonElement";
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/meditation`
 const Meditation = () => {
@@ -34,7 +35,9 @@ const Meditation = () => {
             <br></br>
             Time: {post.time} 
           </Card.Text>
-          <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>
+          {/* <button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</button>
+           */}
+            <ButtonElement onClick="onClick" id={post.id}></ButtonElement>
         </Card.Body>
       </Card>
     </>

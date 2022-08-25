@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import "./Addevent.css";
 import {useState, useEffect} from "react"
 import axios from "axios";
+import swal from "sweetalert";
 
 const apiUrl = `http://localhost:8080/api/v1/events/all`
 const Removeevent = () => {
@@ -23,6 +24,16 @@ useEffect(() => {
       console.log("post deleted!");
       const posts = postAllEvents.filter(item => item.id!== id);
       setPostAllEvents(posts);
+      
+    })
+    swal({
+      title: `Hello Admin !!`,
+      text: "You have successfully removed an event!",
+
+      icon: "success",
+      buttons:{
+        Ok: {text: "Great !"}
+      }
     })
   }
       const allEvents = postAllEvents.map((event) => (

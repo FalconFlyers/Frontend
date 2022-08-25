@@ -19,15 +19,6 @@ const ButtonElement = (props) => {
 icon: "success"
     })
     console.log(props.id);
-    // axios.get(`http://localhost:8080/api/v1/user/${currentUser}/event/${props.id}`).then((response) => {
-    // setBook(response.data);
-    // console.log("value of book after fetching book: ",book);
-    // })
-    // book? swal({
-    //   title: "Booked!",
-    //   text: "You have already booked this Event!",
-    //   icon: "warning"
-    // }):
       axios.put(`http://localhost:8080/api/v1/users/${currentUser}`+`/bookevent/${props.id}`).then(() => {
         setBook(true);
         console.log("event booked!");

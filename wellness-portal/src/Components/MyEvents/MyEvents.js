@@ -7,7 +7,7 @@ import { currentUser } from "../Log/LogIn";
 import swal from "sweetalert";
 
 const username =""+ currentUser;
-//const url = new URL(`localhost:8080/api/v1/user/?x=${username}/events`);
+// const url = new URL(`localhost:8080/api/v1/user/?x=${username}/events`);
 console.log("checking before fetching1",currentUser);
 
 //url.searchParams.append('x', currentUser);
@@ -61,14 +61,7 @@ const Fitness = () => {
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
-          <button variant="primary" onClick={()=>{
-            useEffect(() => {
-              axios.delete("http://localhost:8080/api/v1/user/123abc/event/",{params: {id: post.event_id}}) .then(response => { 
-             setPost('');
-             console.log(response.data); }); 
-           },[setPost])
-            alert("You have cancelled  the event successfully!")
-          }}>Cancel</button>
+          <button variant="primary" onClick={()=>cancelEvent(post.id,post.name)}>Cancel</button>
         </Card.Body>
       </Card>
     </>

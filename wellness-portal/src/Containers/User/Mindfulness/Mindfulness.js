@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Mindfulness.css";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 
+import Card from "react-bootstrap/Card";
+import ButtonElement from "../Yoga/ButtonElement";
 
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/mindfulness`
@@ -39,8 +39,8 @@ const Mindfulness = () => {
             <br></br>
             Time:{mind.time}
           </Card.Text>
-
-          <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button>
+          <ButtonElement onClick="onClick" id={mind.id}></ButtonElement>
+          {/* <Button variant="primary" onClick={()=>alert("You have booked the event Successfully!")}>Book Now</Button> */}
         </Card.Body>
       </Card>
     </>
