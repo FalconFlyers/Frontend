@@ -1,15 +1,16 @@
-import React, { useEffect,useState} from "react";
+import React, { useEffect,useState } from "react";
 import { GoogleLogin } from "react-google-login";
 import { refreshTokenSetup } from "../../utils/refreshToken";
 import { gapi } from "gapi-script";
 import "./LogIn.css";
 import GoogleLogo from "../../Logos/GoogleLogo.png";
 import swal from 'sweetalert';
+import { useHistory } from "react-router-dom";
 
 
 const clientId =
   "383065311131-hb1rcpo5r29dotjfn7t89arccfh0141t.apps.googleusercontent.com";
-  
+  // const [mounted, setMounted] = useState(false)
 let currentUser="";
 let currentUserName="";
 function Login(props) {
@@ -26,13 +27,15 @@ function Login(props) {
     gapi.load("client:auth2", start);
   }, []);
 
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("user2");
-  //   if (loggedInUser) {
-  //     const foundUser = JSON.parse(loggedInUser);
-  //     setUsers(foundUser);
-  //   }
-  // }, []);
+  // if(!mounted){
+  //   // Code for componentWillMount here
+  //   // This code is called only one time before intial render
+  // }
+
+  // useEffect(() =>{
+  //   setMounted(true)
+  // },[])
+
   const onSuccess = (res) => {
     console.log("Login Success: currentUser:", res.profileObj);
     console.log("Login Success: currentUser:", res.profileObj.email);

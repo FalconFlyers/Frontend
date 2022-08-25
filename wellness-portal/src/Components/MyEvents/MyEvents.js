@@ -35,7 +35,7 @@ const Fitness = () => {
         text: `Booking for ${name} has been cancelled!`,
         icon: "warning"
       })
-      const posts = posts.filter(item => item.id!== id);
+      const posts = post.filter(item => item.id!== id);
       setPost(posts);
     })
   }
@@ -54,7 +54,7 @@ const Fitness = () => {
             {post.desc}
           </Card.Text>
           <Card.Text>
-            Date: {post.time}
+            Date: {post.date}
             {/* <br></br>
             Time: {fit.time} */}
           </Card.Text>
