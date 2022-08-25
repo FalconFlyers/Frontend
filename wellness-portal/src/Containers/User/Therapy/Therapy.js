@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const apiUrl = `http://localhost:8080/api/v1/events/type/therapy`
+
 const Ther = () => {
   const [therapy, setTherapy] = useState([]);
   useEffect(() => {
