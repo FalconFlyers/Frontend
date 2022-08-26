@@ -47,6 +47,15 @@ function Addevent() {
     e.preventDefault();
     createEvent();
     //for checking
+    setDate("");
+    setDesc("");
+    setName("");
+    setZlink("");
+    setCapacity("");
+    setImgLink("");
+    setInstructor("");
+    setTime("");
+    setType("");
     console.log(name);
     console.log(time);
     console.log(type);
